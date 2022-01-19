@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "168154132078",
+    "firebase_url": "https://mobdevemachineproject-default-rtdb.firebaseio.com",
+    "project_id": "mobdevemachineproject",
+    "storage_bucket": "mobdevemachineproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:168154132078:android:a73b96845d43f82c6cc07f",
+        "android_client_info": {
+          "package_name": "com.mobdeve.s12.anigan.lino.mobdevemp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "168154132078-63v10hn724jbe3ha4jd5m6ikogtf0qpe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfEp5v0pmoVPPNFIT11Is5GzYghzifMHo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "168154132078-63v10hn724jbe3ha4jd5m6ikogtf0qpe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:168154132078:android:c517e601719ca35a6cc07f",
+        "android_client_info": {
+          "package_name": "com.mobdeve.s12.lino.kyle.mp_phase2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "168154132078-63v10hn724jbe3ha4jd5m6ikogtf0qpe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfEp5v0pmoVPPNFIT11Is5GzYghzifMHo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "168154132078-63v10hn724jbe3ha4jd5m6ikogtf0qpe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:168154132078:android:afad36ec14c935cf6cc07f",
+        "android_client_info": {
+          "package_name": "com.mobdeve.s12.lino.kyle.testfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "168154132078-63v10hn724jbe3ha4jd5m6ikogtf0qpe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfEp5v0pmoVPPNFIT11Is5GzYghzifMHo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "168154132078-63v10hn724jbe3ha4jd5m6ikogtf0qpe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
