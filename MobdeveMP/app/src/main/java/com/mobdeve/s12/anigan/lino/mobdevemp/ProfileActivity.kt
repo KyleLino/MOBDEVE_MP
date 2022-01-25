@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import com.mobdeve.s12.anigan.lino.mobdevemp.databinding.ActivityProfileBinding
+import com.mobdeve.s12.anigan.lino.mobdevemp.model.FandomActivity
 
 class ProfileActivity : AppCompatActivity() {
 
@@ -66,6 +67,9 @@ class ProfileActivity : AppCompatActivity() {
 
         fandoms!!.setOnClickListener{
             Log.i(TAG,"pressed fandoms")
+
+            val gotoFandomActivity = Intent(applicationContext, FandomActivity::class.java)
+            startActivity(gotoFandomActivity)
         }
 
         editprofile!!.setOnClickListener{
