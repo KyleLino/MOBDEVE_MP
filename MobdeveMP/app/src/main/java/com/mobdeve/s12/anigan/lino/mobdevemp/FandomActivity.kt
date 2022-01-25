@@ -1,4 +1,4 @@
-package com.mobdeve.s12.anigan.lino.mobdevemp.model
+package com.mobdeve.s12.anigan.lino.mobdevemp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

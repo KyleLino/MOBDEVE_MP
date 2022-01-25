@@ -7,7 +7,6 @@ import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import com.mobdeve.s12.anigan.lino.mobdevemp.databinding.ActivityProfileBinding
-import com.mobdeve.s12.anigan.lino.mobdevemp.model.FandomActivity
 
 class ProfileActivity : AppCompatActivity() {
 
@@ -59,10 +58,16 @@ class ProfileActivity : AppCompatActivity() {
 
         tradeoffers!!.setOnClickListener{
             Log.i(TAG,"pressed tradeoffers")
+
+            val gotoTradeOffersActivity = Intent(applicationContext, TradeOffersActivity::class.java)
+            startActivity(gotoTradeOffersActivity)
         }
 
         wishlist!!.setOnClickListener{
             Log.i(TAG,"pressed wishlist")
+
+            val gotoWishlistActivity = Intent(applicationContext, WishlistActivity::class.java)
+            startActivity(gotoWishlistActivity)
         }
 
         fandoms!!.setOnClickListener{

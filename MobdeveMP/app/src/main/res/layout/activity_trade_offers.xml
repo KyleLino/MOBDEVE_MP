@@ -4,42 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FandomActivity">
+    tools:context=".ViewCollectionActivity">
+
+    <TextView
+        android:id="@+id/profileback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="Profile"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.952"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
+
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Manage Fandoms"
+        android:text="View Trade Offers"
         android:textSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.112" />
+        app:layout_constraintVertical_bias="0.138" />
 
-    <EditText
-        android:id="@+id/textsearch"
-        android:layout_width="250dp"
+    <Button
+        android:id="@+id/createtradeofferbutton"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Search"
-        android:textSize="20dp"
+        android:text="CREATE TRADE OFFER"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.436"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.213" />
+        app:layout_constraintVertical_bias="0.95" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/fandomsavelist"
+        android:id="@+id/gamesavelist"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="200dp"
         android:layout_marginBottom="100dp"
         android:padding="5dp"
         android:clipToPadding="false"
+
         />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

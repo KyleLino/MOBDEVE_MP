@@ -10,7 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MobdeveMP">
         <activity
-            android:name=".model.FandomActivity"
+            android:name=".TradeOffersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".WishlistActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FandomActivity"
             android:exported="false" />
         <activity
             android:name=".AddItemActivity"
