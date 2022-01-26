@@ -13,6 +13,7 @@ class ProfileActivity : AppCompatActivity() {
     var binding: ActivityProfileBinding? = null
     var username: TextView? = null
     var viewcollections: TextView? = null
+    var usercollections: TextView? = null
     var tradeoffers: TextView? = null
     var wishlist: TextView? = null
     var fandoms: TextView? = null
@@ -35,6 +36,7 @@ class ProfileActivity : AppCompatActivity() {
 
         username = findViewById(R.id.textusername)
         viewcollections = findViewById(R.id.viewcollections)
+        usercollections = findViewById(R.id.usercollections)
         tradeoffers = findViewById(R.id.tradeoffers)
         wishlist = findViewById(R.id.wishlist)
         fandoms = findViewById(R.id.fandoms)
@@ -54,6 +56,17 @@ class ProfileActivity : AppCompatActivity() {
 
             gotoViewCollectionActivity.putExtras(bundle)
             startActivity(gotoViewCollectionActivity)
+        }
+
+        usercollections!!.setOnClickListener{
+            Log.i(TAG,"pressed view collections")
+            val gotoUserCollection = Intent(applicationContext, UserCollection::class.java)
+
+            var bundle = Bundle()
+            bundle.putString("username", username!!.text.toString())
+
+            gotoUserCollection.putExtras(bundle)
+            startActivity(gotoUserCollection)
         }
 
         tradeoffers!!.setOnClickListener{

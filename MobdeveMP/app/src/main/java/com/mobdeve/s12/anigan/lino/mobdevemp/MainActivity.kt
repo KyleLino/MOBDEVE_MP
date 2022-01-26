@@ -40,7 +40,6 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
 
 
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding!!.root)
 
