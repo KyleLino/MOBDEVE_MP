@@ -18,9 +18,11 @@
         <entry key="app/src/main/res/layout/activity_add_item.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/activity_browse_collection.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/activity_edit_item.xml" value="0.15070921985815602" />
+        <entry key="app/src/main/res/layout/activity_fandom.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.14387031408308004" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.15070921985815602" />
+        <entry key="app/src/main/res/layout/activity_user_collection.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/activity_view_collection.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/activity_view_item.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/itemrowsave.xml" value="0.15070921985815602" />
