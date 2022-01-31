@@ -3,12 +3,19 @@ package com.mobdeve.s12.anigan.lino.mobdevemp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.mobdeve.s12.anigan.lino.mobdevemp.databinding.ActivityAddItemBinding
 
 
 class AddItemActivity : AppCompatActivity() {
 
-    var binding: ActivityAddItemBinding? = null
+    lateinit var binding: ActivityAddItemBinding
+    lateinit var database: DatabaseReference
+
+    var TAG = "ADDITEMACTIVITY"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,9 +29,39 @@ class AddItemActivity : AppCompatActivity() {
         setContentView(binding!!.root)
 
         binding!!.addbutton!!.setOnClickListener{
-            val gotoViewCollectionActivity = Intent(applicationContext, ViewCollectionActivity::class.java)
 
-            startActivity(gotoViewCollectionActivity)
+            val name = binding.itemnameinput.text.toString()
+            val price = binding.itempriceinput.text.toString()
+            val description = binding.itempriceinput.text.toString()
+
+            val owner = "nullowner"
+
+            if (name != "" && price != "" && description != ""){
+
+                database = FirebaseDatabase.getInstance().getReference("UserItem")
+                val UserItem = UserItem(name,price,description,owner)
+                database.child(name).setValue(UserItem).addOnSuccessListener {
+
+                    Log.i(TAG,"here")
+
+                    binding.itemnameinput.text.clear()
+                    binding.itemdescriptioninput.text.clear()
+                    binding.itempriceinput.text.clear()
+
+                    Toast.makeText(this, "user item created", Toast.LENGTH_SHORT).show()
+
+                    val gotoViewCollectionActivity = Intent(applicationContext, ViewCollectionActivity::class.java)
+                    startActivity(gotoViewCollectionActivity)
+
+                }.addOnFailureListener {
+
+                    Log.i(TAG,"here!")
+                    Toast.makeText(this, "user register FAILED", Toast.LENGTH_SHORT).show()
+                }
+            }
+            else{
+                Toast.makeText(this, "fill up all fields", Toast.LENGTH_SHORT).show()
+            }
         }
 
         binding!!.profileback!!.setOnClickListener {
