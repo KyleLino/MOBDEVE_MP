@@ -13,7 +13,6 @@ class UserDaoArrayList: UserDAO {
         userList.add(Item("TXT PC", "200", "luv it"))
         userList.add(Item("EXO PC", "100", "so cool"))
 
-
     }
 
     override fun getUsers(): ArrayList<Item?>? = userList
