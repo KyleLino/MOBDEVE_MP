@@ -70,8 +70,9 @@ class MainActivity : AppCompatActivity() {
         //LOGIN
         buttonlogin!!.setOnClickListener{
 
-            //login()
+            login()
 
+            /*
             Log.i(TAG,"pressed login")
             val gotoProfileActivity = Intent(applicationContext, ProfileActivity::class.java)
 
@@ -79,7 +80,7 @@ class MainActivity : AppCompatActivity() {
             bundle.putString("username", username!!.text.toString())
 
             gotoProfileActivity.putExtras(bundle)
-            startActivity(gotoProfileActivity)
+            startActivity(gotoProfileActivity)*/
         }
 
         //LOGIN FB
@@ -96,47 +97,46 @@ class MainActivity : AppCompatActivity() {
         if (username.isEmpty() || password.isEmpty()){
             Log.i(TAG,"empty field/s")
         }else{
-            isAccountExist(username,password)
+            database.addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    // This method is called once with the initial value and again
+                    // whenever data at this location is updated.
+
+                    var isReal = false
+                    var list = ArrayList<User>()
+                    for (postsnapshot in dataSnapshot.children){
+
+                        var value = dataSnapshot.getValue<User>()
+
+                        if (value!!.username == (username) && value!!.password == password){
+                            isReal = true
+                        }
+
+                        list.add(value!!)
+                    }
+
+                    if (isReal){
+                        val gotoProfileActivity = Intent(applicationContext, ProfileActivity::class.java)
+
+                        var bundle = Bundle()
+                        bundle.putString("username", binding.textusername.toString())
+                        gotoProfileActivity.putExtras(bundle)
+                        startActivity(gotoProfileActivity)
+                    }
+
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    // Failed to read value
+
+                }
+            })
         }
     }
 
 
     private fun isAccountExist(username: String, password: String){
 
-        database.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-
-                var isReal = false
-                var list = ArrayList<User>()
-                for (postsnapshot in dataSnapshot.children){
-
-                    var value = dataSnapshot.getValue<User>()
-
-                    if (value!!.username == (username) && value!!.password == password){
-                        isReal = true
-                    }
-
-                    list.add(value!!)
-                }
-
-                if (isReal){
-                    val gotoProfileActivity = Intent(applicationContext, ProfileActivity::class.java)
-
-                    var bundle = Bundle()
-                    bundle.putString("username", binding.textusername.toString())
-                    gotoProfileActivity.putExtras(bundle)
-                    startActivity(gotoProfileActivity)
-                }
-
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                // Failed to read value
-
-            }
-        })
 
     }
 }

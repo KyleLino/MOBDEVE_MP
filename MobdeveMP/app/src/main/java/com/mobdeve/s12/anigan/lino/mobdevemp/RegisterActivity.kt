@@ -32,38 +32,33 @@ class RegisterActivity : AppCompatActivity() {
 
         binding.register.setOnClickListener {
             Log.i(TAG, "pressed register")
-
-
+            
             val username = binding.textusername.text.toString()
             val name = binding.textname.text.toString()
             val password = binding.textpassword.text.toString()
             val confirmpassword = binding.textconfirmpassword.text.toString()
 
             if (username.isNotEmpty() && name.isNotEmpty() && password.isNotEmpty() && password == confirmpassword) {
+
                 database = FirebaseDatabase.getInstance().getReference("User")
                 val User = User(username, name, password)
                 database.child(username).setValue(User).addOnSuccessListener {
 
+                    binding.textusername.text.clear()
+                    binding.textname.text.clear()
+                    binding.textpassword.text.clear()
+                    binding.textconfirmpassword.text.clear()
 
-                    database = FirebaseDatabase.getInstance().getReference("User")
-                    val User = User(username, name, password)
-                    database.child(username).setValue(User).addOnSuccessListener {
+                    Toast.makeText(this, "user registered", Toast.LENGTH_SHORT).show()
 
-                        binding.textusername.text.clear()
-                        binding.textname.text.clear()
-                        binding.textpassword.text.clear()
-                        binding.textconfirmpassword.text.clear()
+                    val gotoMainActivity = Intent(applicationContext, MainActivity::class.java)
+                    startActivity(gotoMainActivity)
 
-                        Toast.makeText(this, "user registered", Toast.LENGTH_SHORT).show()
-
-                        val gotoMainActivity = Intent(applicationContext, MainActivity::class.java)
-                        startActivity(gotoMainActivity)
-
-                    }.addOnFailureListener {
-                        Log.i(TAG, "here!")
-                        Toast.makeText(this, "user register FAILED", Toast.LENGTH_SHORT).show()
-                    }
+                }.addOnFailureListener {
+                    Log.i(TAG, "here!")
+                    Toast.makeText(this, "user register FAILED", Toast.LENGTH_SHORT).show()
                 }
+
             } else if (password != confirmpassword) {
                 Toast.makeText(
                     this,
@@ -81,8 +76,6 @@ class RegisterActivity : AppCompatActivity() {
             Log.i(TAG, "pressed register fb")
         }
     }
-
-
 
 
     override fun onStart() {
