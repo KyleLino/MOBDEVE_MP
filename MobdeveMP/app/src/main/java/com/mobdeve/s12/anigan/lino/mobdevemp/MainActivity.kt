@@ -16,13 +16,6 @@ import com.mobdeve.s12.anigan.lino.mobdevemp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-
-    var register: TextView? = null
-    var username: EditText? = null
-    var password: EditText? = null
-    var buttonlogin: Button? = null
-    var buttonloginfacebook: Button? = null
-
     var TAG = "MAINACTIVITY"
 
     lateinit var database: DatabaseReference
@@ -42,20 +35,11 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding!!.root)
 
-        username = findViewById(R.id.textusername)
-        password = findViewById(R.id.textpassword)
-
-        buttonlogin = findViewById(R.id.login)
-        buttonloginfacebook = findViewById(R.id.loginfacebook)
-
-        register = findViewById(R.id.register)
-
         //REGISTER
-        register!!.setOnClickListener{
+        binding.register.setOnClickListener{
             Log.i(TAG,"pressed register")
 
             val gotoRegisterActivity = Intent(applicationContext, RegisterActivity::class.java)
@@ -68,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         //LOGIN
-        buttonlogin!!.setOnClickListener{
+        binding.login.setOnClickListener{
 
             login()
 
@@ -84,7 +68,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         //LOGIN FB
-        buttonloginfacebook!!.setOnClickListener{
+        binding.loginfacebook.setOnClickListener{
             Log.i(TAG,"pressed login facebook")
         }
 

@@ -42,7 +42,8 @@ class RegisterActivity : AppCompatActivity() {
 
                 database = FirebaseDatabase.getInstance().getReference("User")
                 val User = User(username, name, password)
-                database.child(username).setValue(User).addOnSuccessListener {
+                var id = database.push().key.toString()
+                database.child(id).setValue(User).addOnSuccessListener {
 
                     binding.textusername.text.clear()
                     binding.textname.text.clear()
@@ -68,8 +69,6 @@ class RegisterActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "fill up all fields", Toast.LENGTH_SHORT).show()
             }
-
-
         }
 
         buttonregisterfacebook!!.setOnClickListener {
@@ -80,8 +79,6 @@ class RegisterActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-
-
     }
 
 }
