@@ -1,3 +1,14 @@
 package com.mobdeve.s12.anigan.lino.mobdevemp
 
-data class User(val username : String? = null, val name : String? = null, val password : String? = null)
+class User(){
+
+    lateinit var username: String
+    lateinit var name: String
+    lateinit var password: String
+
+    constructor(username : String, name : String, password : String) : this(){
+        this.username = username
+        this.name = name
+        this.password = password
+    }
+}
