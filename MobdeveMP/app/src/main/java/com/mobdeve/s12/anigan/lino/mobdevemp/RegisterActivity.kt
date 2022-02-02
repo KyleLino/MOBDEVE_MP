@@ -39,10 +39,11 @@ class RegisterActivity : AppCompatActivity() {
             val password = binding.textpassword.text.toString()
             val confirmpassword = binding.textconfirmpassword.text.toString()
 
-            database = FirebaseDatabase.getInstance().getReference("User")
-            val User = User(username, name, password)
-            database.child(username).setValue(User).addOnSuccessListener {
-                if (username != "" && name != "" && password != "" && password == confirmpassword) {
+            if (username.isNotEmpty() && name.isNotEmpty() && password.isNotEmpty() && password == confirmpassword) {
+                database = FirebaseDatabase.getInstance().getReference("User")
+                val User = User(username, name, password)
+                database.child(username).setValue(User).addOnSuccessListener {
+
 
                     database = FirebaseDatabase.getInstance().getReference("User")
                     val User = User(username, name, password)
@@ -62,23 +63,27 @@ class RegisterActivity : AppCompatActivity() {
                         Log.i(TAG, "here!")
                         Toast.makeText(this, "user register FAILED", Toast.LENGTH_SHORT).show()
                     }
-                } else if (password != confirmpassword) {
-                    Toast.makeText(this, "password and confirm password does not match", Toast.LENGTH_SHORT).show()
-                } else {
-                    Toast.makeText(this, "fill up all fields", Toast.LENGTH_SHORT).show()
                 }
-
-
-
+            } else if (password != confirmpassword) {
+                Toast.makeText(
+                    this,
+                    "password and confirm password does not match",
+                    Toast.LENGTH_SHORT
+                ).show()
+            } else {
+                Toast.makeText(this, "fill up all fields", Toast.LENGTH_SHORT).show()
             }
 
-            buttonregisterfacebook!!.setOnClickListener {
-                Log.i(TAG, "pressed register fb")
-            }
+
         }
 
-
+        buttonregisterfacebook!!.setOnClickListener {
+            Log.i(TAG, "pressed register fb")
+        }
     }
+
+
+
 
     override fun onStart() {
         super.onStart()
