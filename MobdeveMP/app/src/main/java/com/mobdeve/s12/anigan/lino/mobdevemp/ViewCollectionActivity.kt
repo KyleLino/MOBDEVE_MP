@@ -4,18 +4,19 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.mobdeve.s12.anigan.lino.mobdevemp.dao.UserDAO
-import com.mobdeve.s12.anigan.lino.mobdevemp.dao.UserDaoArrayList
+import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.database.*
+import com.mobdeve.s12.anigan.lino.mobdevemp.dao.YourItemAdapter
+import com.mobdeve.s12.anigan.lino.mobdevemp.dao.YourItems
 import com.mobdeve.s12.anigan.lino.mobdevemp.databinding.ActivityViewCollectionBinding
 import com.mobdeve.s12.anigan.lino.mobdevemp.model.Item
 
 class ViewCollectionActivity : AppCompatActivity() {
+
     var binding: ActivityViewCollectionBinding? = null
-    var userList: ArrayList<Item?> = ArrayList<Item?>()
-    var userDAO: UserDAO = UserDaoArrayList()
-    var Adapter: Adapter? = null
-
-
+    private lateinit var databaseReference: DatabaseReference
+    private lateinit var userRecyclerView: RecyclerView
+    private lateinit var yourItemList: ArrayList<YourItems>
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,14 +24,12 @@ class ViewCollectionActivity : AppCompatActivity() {
         binding =ActivityViewCollectionBinding.inflate(layoutInflater)
         setContentView(binding!!.root)
 
-        populateList()
-        Adapter = Adapter(applicationContext, userList!!) {index -> removeItem(index)}
+        userRecyclerView = findViewById(R.id.your_items)
+        userRecyclerView.layoutManager=LinearLayoutManager(this)
+        userRecyclerView.setHasFixedSize(true)
 
-        binding!!.gamesavelist.layoutManager = LinearLayoutManager(applicationContext,
-            LinearLayoutManager.VERTICAL,
-            false)
-
-        binding!!.gamesavelist.adapter = Adapter
+        yourItemList = arrayListOf<YourItems>()
+        getUserData()
 
         binding!!.additem!!.setOnClickListener {
             val gotoAddItemActivity = Intent(applicationContext, AddItemActivity::class.java)
@@ -42,18 +41,31 @@ class ViewCollectionActivity : AppCompatActivity() {
             val gotoProfileActivity = Intent(applicationContext, ProfileActivity ::class.java)
             startActivity(gotoProfileActivity )
         }
-
-
-
     }
 
+    private fun getUserData(){
 
-    fun populateList(){
-        userList = userDAO.getUsers()!!
-    }
+        databaseReference = FirebaseDatabase.getInstance().getReference("UserItem")
 
-    private fun removeItem(position: Int) {
-        userList.removeAt(position)
-        Adapter?.setItem(userList)
+        databaseReference.addValueEventListener(object : ValueEventListener{
+
+            override fun onDataChange(snapshot: DataSnapshot) {
+
+                if(snapshot.exists()){
+                    for(itemSnapshot in snapshot.children){
+
+                        val item = itemSnapshot.getValue(YourItems::class.java)
+                        yourItemList.add(item!!)
+
+                    }
+                    userRecyclerView.adapter = YourItemAdapter(yourItemList)
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+
+        })
     }
 }

@@ -100,11 +100,5 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(gotoMainActivity)
         }
 
-        binding!!.browsecollection!!.setOnClickListener{
-            Log.i(TAG,"pressed browse collection")
-            val gotoBrowseCollectionActivity = Intent(applicationContext, BrowseCollectionActivity ::class.java)
-            startActivity(gotoBrowseCollectionActivity )
-        }
-
     }
 }
