@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ViewCollectionActivity">
+    tools:context=".ViewCollectionActivity"
+    android:background="@drawable/horizontalbars">
 
     <TextView
         android:id="@+id/profileback"
@@ -19,7 +20,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
+        app:layout_constraintVertical_bias="0.005" />
 
     <TextView
         android:id="@+id/additem"
@@ -27,13 +28,14 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:gravity="center"
-        android:text="Add Item"
+        android:text="ADD ITEM"
+        android:textStyle="bold"
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.938" />
+        app:layout_constraintVertical_bias="0.919" />
 
     <TextView
         android:layout_width="match_parent"
@@ -66,6 +68,7 @@
         android:id="@+id/searchbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#DBA06B"
         android:text="SEARCH"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.889"
@@ -75,6 +78,8 @@
         app:layout_constraintVertical_bias="0.213" />
 
     <androidx.recyclerview.widget.RecyclerView
+
+        android:backgroundTint="#DBA06B"
         android:id="@+id/your_items"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

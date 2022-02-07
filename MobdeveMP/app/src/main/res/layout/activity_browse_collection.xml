@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BrowseCollectionActivity">
+    tools:context=".BrowseCollectionActivity"
+    android:background="@drawable/horizontalbars">
 
     <TextView
         android:id="@+id/profileback"
@@ -19,9 +20,10 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
+        app:layout_constraintVertical_bias="0.01" />
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -53,6 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SEARCH"
+        android:backgroundTint="#DBA06B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.889"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -61,25 +64,16 @@
         app:layout_constraintVertical_bias="0.213" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/gamesavelist"
+        android:id="@+id/other_items"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="200dp"
-        android:layout_marginBottom="250dp"
-        android:padding="5dp"
-        android:clipToPadding="false"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
 
-        />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/hotlist"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="500dp"
-        android:layout_marginBottom="50dp"
-        android:padding="5dp"
-        android:clipToPadding="false"
-
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textsearch"
+        app:layout_constraintVertical_bias="0.335"
+        tools:listitem="@layout/item_row_other_collection" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

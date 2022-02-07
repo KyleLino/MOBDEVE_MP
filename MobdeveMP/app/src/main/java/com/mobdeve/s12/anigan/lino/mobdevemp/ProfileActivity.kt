@@ -59,8 +59,8 @@ class ProfileActivity : AppCompatActivity() {
         }
 
         usercollections!!.setOnClickListener{
-            Log.i(TAG,"pressed view collections")
-            val gotoUserCollection = Intent(applicationContext, UserCollection::class.java)
+            Log.i(TAG,"pressed user collections")
+            val gotoUserCollection = Intent(applicationContext, BrowseCollectionActivity::class.java)
 
             var bundle = Bundle()
             bundle.putString("username", username!!.text.toString())
