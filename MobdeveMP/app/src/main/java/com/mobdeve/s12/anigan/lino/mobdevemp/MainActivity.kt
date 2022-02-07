@@ -104,10 +104,6 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "incorrect username or password", Toast.LENGTH_SHORT).show()
             }
         }
-
-
-
-
     }
 
     override fun onStart() {

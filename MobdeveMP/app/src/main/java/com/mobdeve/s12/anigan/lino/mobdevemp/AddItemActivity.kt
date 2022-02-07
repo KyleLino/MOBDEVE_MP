@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.mobdeve.s12.anigan.lino.mobdevemp.databinding.ActivityAddItemBinding
@@ -25,6 +26,8 @@ class AddItemActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
+        var bundle = intent.extras
+
         binding = ActivityAddItemBinding.inflate(layoutInflater)
         setContentView(binding!!.root)
 
@@ -32,14 +35,15 @@ class AddItemActivity : AppCompatActivity() {
 
             val name = binding.itemnameinput.text.toString()
             val price = binding.itempriceinput.text.toString()
-            val description = binding.itempriceinput.text.toString()
+            val description = binding.itemdescriptioninput.text.toString()
 
-            val owner = "nullowner"
+            var owner = bundle!!.getString("username")
+            Log.i(TAG,"$owner")
 
             if (name != "" && price != "" && description != ""){
 
                 database = FirebaseDatabase.getInstance().getReference("UserItem")
-                val UserItem = UserItem(name,price,description,owner)
+                val UserItem = owner?.let { it1 -> UserItem(name,price,description, it1) }
                 database.child(name).setValue(UserItem).addOnSuccessListener {
 
                     Log.i(TAG,"here")
@@ -51,6 +55,9 @@ class AddItemActivity : AppCompatActivity() {
                     Toast.makeText(this, "user item created", Toast.LENGTH_SHORT).show()
 
                     val gotoViewCollectionActivity = Intent(applicationContext, ViewCollectionActivity::class.java)
+                    var bundle = Bundle()
+                    bundle.putString("username", owner)
+                    gotoViewCollectionActivity.putExtras(bundle)
                     startActivity(gotoViewCollectionActivity)
 
                 }.addOnFailureListener {

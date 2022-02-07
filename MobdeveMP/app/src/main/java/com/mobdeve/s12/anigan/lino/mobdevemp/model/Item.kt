@@ -1,7 +1,15 @@
 package com.mobdeve.s12.anigan.lino.mobdevemp.model
 
-class Item (
-    var textname:String,
-    var textprice:String,
-    var textdescription:String,
-)
+class Item(){
+    lateinit var textname:String
+    lateinit var textprice:String
+    lateinit var textdescription:String
+
+    constructor(textname:String,textprice:String,textdescription:String) : this(){
+        this.textname = textname
+        this.textprice = textprice
+        this.textdescription = textdescription
+    }
+}
+
+

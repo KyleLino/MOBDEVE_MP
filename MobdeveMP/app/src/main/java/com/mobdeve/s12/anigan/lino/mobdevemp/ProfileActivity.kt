@@ -52,7 +52,7 @@ class ProfileActivity : AppCompatActivity() {
             val gotoViewCollectionActivity = Intent(applicationContext, ViewCollectionActivity::class.java)
 
             var bundle = Bundle()
-            bundle.putString("username", username!!.text.toString())
+            bundle.putString("username", bundleusername)
 
             gotoViewCollectionActivity.putExtras(bundle)
             startActivity(gotoViewCollectionActivity)

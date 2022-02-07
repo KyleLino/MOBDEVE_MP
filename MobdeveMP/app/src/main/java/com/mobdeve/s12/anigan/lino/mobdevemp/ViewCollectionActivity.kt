@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
+import com.google.firebase.database.ktx.getValue
 import com.mobdeve.s12.anigan.lino.mobdevemp.dao.YourItemAdapter
 import com.mobdeve.s12.anigan.lino.mobdevemp.dao.YourItems
 import com.mobdeve.s12.anigan.lino.mobdevemp.databinding.ActivityViewCollectionBinding
@@ -24,6 +25,9 @@ class ViewCollectionActivity : AppCompatActivity() {
         binding =ActivityViewCollectionBinding.inflate(layoutInflater)
         setContentView(binding!!.root)
 
+        var bundle = intent.extras
+        var bundleusername = bundle!!.getString("username")
+
         userRecyclerView = findViewById(R.id.your_items)
         userRecyclerView.layoutManager=LinearLayoutManager(this)
         userRecyclerView.setHasFixedSize(true)
@@ -33,7 +37,9 @@ class ViewCollectionActivity : AppCompatActivity() {
 
         binding!!.additem!!.setOnClickListener {
             val gotoAddItemActivity = Intent(applicationContext, AddItemActivity::class.java)
-
+            var bundle = Bundle()
+            bundle.putString("username", bundleusername)
+            gotoAddItemActivity.putExtras(bundle)
             startActivity(gotoAddItemActivity)
         }
 
@@ -46,6 +52,8 @@ class ViewCollectionActivity : AppCompatActivity() {
     private fun getUserData(){
 
         databaseReference = FirebaseDatabase.getInstance().getReference("UserItem")
+        var bundle = intent.extras
+        var bundleusername = bundle!!.getString("username")
 
         databaseReference.addValueEventListener(object : ValueEventListener{
 
