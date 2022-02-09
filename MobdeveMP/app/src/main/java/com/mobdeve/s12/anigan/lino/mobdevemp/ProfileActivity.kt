@@ -86,6 +86,10 @@ class ProfileActivity : AppCompatActivity() {
             Log.i(TAG,"pressed wishlist")
 
             val gotoWishlistActivity = Intent(applicationContext, WishlistActivity::class.java)
+            var bundle = Bundle()
+            bundle.putString("username", bundleusername)
+
+            gotoWishlistActivity.putExtras(bundle)
             startActivity(gotoWishlistActivity)
         }
 

@@ -1,5 +1,6 @@
 package com.mobdeve.s12.anigan.lino.mobdevemp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -10,11 +11,13 @@ import com.mobdeve.s12.anigan.lino.mobdevemp.dao.OtherUsers
 import com.mobdeve.s12.anigan.lino.mobdevemp.dao.YourWishlist
 import com.mobdeve.s12.anigan.lino.mobdevemp.dao.YourWishlistAdapter
 import com.mobdeve.s12.anigan.lino.mobdevemp.databinding.ActivityBrowseCollectionBinding
+import com.mobdeve.s12.anigan.lino.mobdevemp.databinding.ActivityAddWishListBinding
+import com.mobdeve.s12.anigan.lino.mobdevemp.databinding.ActivityMainBinding
 import com.mobdeve.s12.anigan.lino.mobdevemp.databinding.ActivityWishlistBinding
 
 class WishlistActivity : AppCompatActivity() {
 
-    var binding: ActivityWishlistBinding? = null
+    lateinit var binding: ActivityWishlistBinding
     private lateinit var databaseReference: DatabaseReference
     private lateinit var userRecyclerView: RecyclerView
     private lateinit var yourWishlistList: ArrayList<YourWishlist>
@@ -25,11 +28,23 @@ class WishlistActivity : AppCompatActivity() {
         setContentView(binding!!.root)
 
         userRecyclerView = findViewById(R.id.your_wishlist)
-        userRecyclerView.layoutManager= LinearLayoutManager(this)
+        userRecyclerView.layoutManager = LinearLayoutManager(this)
         userRecyclerView.setHasFixedSize(true)
 
         yourWishlistList = arrayListOf<YourWishlist>()
         getUserData()
+
+        var bundle = intent.extras
+        var bundleusername = bundle!!.getString("username")
+
+        binding.addwishlist.setOnClickListener {
+            val gotoAddWishListActivity =
+                Intent(applicationContext, AddWishListActivity::class.java)
+            var bundle = Bundle()
+            bundle.putString("username", bundleusername)
+            gotoAddWishListActivity.putExtras(bundle)
+            startActivity(gotoAddWishListActivity)
+        }
 
     }
 
@@ -41,8 +56,8 @@ class WishlistActivity : AppCompatActivity() {
 
             override fun onDataChange(snap: DataSnapshot) {
 
-                if(snap.exists()){
-                    for(wishlistSnapshot in snap.children){
+                if (snap.exists()) {
+                    for (wishlistSnapshot in snap.children) {
 
                         val yourWishlist = wishlistSnapshot.getValue(YourWishlist::class.java)
                         yourWishlistList.add(yourWishlist!!)
@@ -57,7 +72,7 @@ class WishlistActivity : AppCompatActivity() {
             }
 
         })
+
+
     }
-
-
 }
