@@ -98,7 +98,6 @@ class MainActivity : AppCompatActivity() {
 
                     override fun onCancelled(error: DatabaseError) {
                         // Failed to read value
-
                     }
                 })
                 Toast.makeText(this, "incorrect username or password", Toast.LENGTH_SHORT).show()
@@ -108,7 +107,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-
 
     }
 

@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MobdeveMP">
         <activity
+            android:name=".QrActivity"
+            android:exported="false" />
+        <activity
+            android:name=".QRActivity"
+            android:exported="false" />
+        <activity
             android:name=".UserCollection"
             android:exported="false" />
         <activity

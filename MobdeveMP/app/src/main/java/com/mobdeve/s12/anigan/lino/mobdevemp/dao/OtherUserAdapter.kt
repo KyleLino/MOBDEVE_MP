@@ -27,7 +27,7 @@ class OtherUserAdapter(private val otherUserList: ArrayList<OtherUsers>): Recycl
 
     class UserViewHolder(userView: View): RecyclerView.ViewHolder(userView){
 
-        val username : TextView = userView.findViewById(R.id.text_user_name)
+        var username : TextView = userView.findViewById(R.id.text_user_name)
 
     }
 

@@ -47,6 +47,12 @@ class ProfileActivity : AppCompatActivity() {
         var bundleusername = bundle?.getString("username")
         binding!!.textusername.text = bundleusername
 
+        binding!!.qrscanner.setOnClickListener {
+            val gotoQrActivity = Intent(applicationContext, QrActivity::class.java)
+            startActivity(gotoQrActivity)
+        }
+
+
         viewcollections!!.setOnClickListener{
             Log.i(TAG,"pressed view collections")
             val gotoViewCollectionActivity = Intent(applicationContext, ViewCollectionActivity::class.java)
@@ -87,6 +93,11 @@ class ProfileActivity : AppCompatActivity() {
             Log.i(TAG,"pressed fandoms")
 
             val gotoFandomActivity = Intent(applicationContext, FandomActivity::class.java)
+
+            var bundle = Bundle()
+            bundle.putString("username", username!!.text.toString())
+
+            gotoFandomActivity.putExtras(bundle)
             startActivity(gotoFandomActivity)
         }
 
