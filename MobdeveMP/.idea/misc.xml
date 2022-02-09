@@ -22,6 +22,7 @@
         <entry key="..\:/Users/Personal/Documents/GitHub/MOBDEVE_MP/MobdeveMP/app/src/main/res/layout/item_row_your_collection.xml" value="0.23541666666666666" />
         <entry key="..\:/Users/Personal/Documents/GitHub/MOBDEVE_MP/MobdeveMP/app/src/main/res/layout/item_row_your_collections.xml" value="1.6142857142857143" />
         <entry key="app/src/main/res/layout/activity_add_item.xml" value="0.15070921985815602" />
+        <entry key="app/src/main/res/layout/activity_add_wish_list.xml" value="0.15217391304347827" />
         <entry key="app/src/main/res/layout/activity_browse_collection.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/activity_edit_item.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/activity_fandom.xml" value="0.15070921985815602" />
@@ -31,6 +32,7 @@
         <entry key="app/src/main/res/layout/activity_user_collection.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/activity_view_collection.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/activity_view_item.xml" value="0.15070921985815602" />
+        <entry key="app/src/main/res/layout/activity_wishlist.xml" value="0.16394927536231885" />
         <entry key="app/src/main/res/layout/itemrowsave.xml" value="0.15070921985815602" />
       </map>
     </option>

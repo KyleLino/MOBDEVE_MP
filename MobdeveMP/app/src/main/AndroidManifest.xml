@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MobdeveMP">
         <activity
+            android:name=".AddWishListActivity"
+            android:exported="false" />
+        <activity
             android:name=".QrActivity"
             android:exported="false" />
         <activity
