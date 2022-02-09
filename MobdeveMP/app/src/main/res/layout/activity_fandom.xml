@@ -4,192 +4,222 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FandomActivity">
+    tools:context=".FandomActivity"
+    android:background="@drawable/horizontalbars">
+
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Manage Fandoms"
+        android:textColor="#2B82DD"
         android:textSize="40dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.159" />
 
     <TextView
-        android:id="@+id/textname"
-        android:layout_width="match_parent"
+        android:id="@+id/profileback"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:clickable="true"
         android:gravity="center"
-        android:text=""
-        android:textSize="40dp"
+        android:text="Profile"
+        android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.952"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.212" />
-
-    <EditText
-        android:id="@+id/textsearch"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Search"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.115" />
-
+        app:layout_constraintVertical_bias="0.008" />
 
     <Button
         android:id="@+id/buttonSAVE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SAVE"
+        android:backgroundTint="#DBA06B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.963" />
+        app:layout_constraintVertical_bias="0.923" />
 
     <CheckBox
-        android:id="@+id/checkBoxBP"
+        android:id="@+id/checkBoxOTHERS"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="BLACKPINK"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.854"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.338" />
 
-    <CheckBox
-        android:id="@+id/checkBoxBTS"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="BTS"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.137"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.338" />
+        android:text="OTHERS"
+        android:textColor="#605F5F"
+        android:textSize="20sp"
+        android:textStyle="bold"
 
-    <CheckBox
-        android:id="@+id/checkBoxTWICE"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="TWICE"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.854"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.445" />
 
-    <CheckBox
-        android:id="@+id/checkBoxEXO"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="EXO"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.131"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.445" />
-
-    <CheckBox
-        android:id="@+id/checkBoxW1"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="WANNAONE"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.137"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.549" />
+        app:layout_constraintVertical_bias="0.815" />
 
     <CheckBox
         android:id="@+id/checkBoxG7"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="GOT7"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.131"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.65" />
 
-    <CheckBox
-        android:id="@+id/checkBoxNCT"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="NCT"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.137"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.758" />
+        android:textColor="#605F5F"
+        android:textSize="20sp"
+        android:textStyle="bold"
 
-    <CheckBox
-        android:id="@+id/checkBoxRV"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="RED VELVET"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.854"
+        app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.549" />
+        app:layout_constraintVertical_bias="0.604" />
 
     <CheckBox
         android:id="@+id/checkBoxEG"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="EVERGLOW"
+        android:textColor="#605F5F"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.854"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.65" />
+        app:layout_constraintVertical_bias="0.604" />
 
     <CheckBox
-        android:id="@+id/checkBoxOTHERS"
+        android:id="@+id/checkBoxBP"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:text="OTHERS"
+        android:text="BLACKPINK"
+        android:textColor="#605F5F"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.854"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.86" />
+        app:layout_constraintVertical_bias="0.292" />
+
+    <CheckBox
+        android:id="@+id/checkBoxRV"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="RED VELVET"
+        android:textColor="#605F5F"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.854"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.503" />
+
+    <CheckBox
+        android:id="@+id/checkBoxTWICE"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="TWICE"
+        android:textColor="#605F5F"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.854"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.399" />
+
+    <CheckBox
+        android:id="@+id/checkBoxW1"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="WANNAONE"
+        android:textColor="#605F5F"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.137"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.503" />
+
+    <CheckBox
+        android:id="@+id/checkBoxNCT"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="NCT"
+        android:textColor="#605F5F"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.137"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.713" />
+
+    <CheckBox
+        android:id="@+id/checkBoxBTS"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="BTS"
+        android:textColor="#605F5F"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.137"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.292" />
+
+    <CheckBox
+        android:id="@+id/checkBoxEXO"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="EXO"
+        android:textColor="#605F5F"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.399" />
 
     <CheckBox
         android:id="@+id/checkBoxMMM"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="MAMAMOO"
+        android:textColor="#605F5F"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.854"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.758" />
+        app:layout_constraintVertical_bias="0.713" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,19 +33,6 @@ class FandomActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fandom)
 
-        var bundle = intent.extras
-        val bundleusername = bundle!!.getString("username")
-
-        // Get a reference to our posts
-
-// Attach a listener to read the data at our posts reference
-        // Attach a listener to read the data at our posts reference
-
-    }
-
-    override fun onStart() {
-        super.onStart()
-
         binding = ActivityFandomBinding.inflate(layoutInflater)
         setContentView(binding!!.root)
 
@@ -69,6 +56,11 @@ class FandomActivity : AppCompatActivity() {
         var MMOO = false
 
         var OTHERS = false
+
+        binding!!.profileback!!.setOnClickListener {
+            val gotoProfileActivity = Intent(applicationContext, ProfileActivity ::class.java)
+            startActivity(gotoProfileActivity )
+        }
 
         ref.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -117,6 +109,9 @@ class FandomActivity : AppCompatActivity() {
             }
         })
     }
+
 }
+
+
 
 
