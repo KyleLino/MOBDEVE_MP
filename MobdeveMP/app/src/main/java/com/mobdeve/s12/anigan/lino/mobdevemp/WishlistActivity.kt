@@ -51,13 +51,12 @@ class WishlistActivity : AppCompatActivity() {
     private fun getUserData() {
 
         databaseReference = FirebaseDatabase.getInstance().getReference("UserWishListItem")
-
         databaseReference.addValueEventListener(object : ValueEventListener {
 
-            override fun onDataChange(snap: DataSnapshot) {
+            override fun onDataChange(snapshot: DataSnapshot) {
 
-                if (snap.exists()) {
-                    for (wishlistSnapshot in snap.children) {
+                if (snapshot.exists()) {
+                    for (wishlistSnapshot in snapshot.children) {
 
                         val yourWishlist = wishlistSnapshot.getValue(YourWishlist::class.java)
                         yourWishlistList.add(yourWishlist!!)

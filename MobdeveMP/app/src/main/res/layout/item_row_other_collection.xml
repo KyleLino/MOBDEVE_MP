@@ -5,7 +5,7 @@
 
     <TableRow
 
-        android:id="@+id/other_items"
+        android:id="@+id/user_items"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 

@@ -18,7 +18,7 @@ class YourWishlistAdapter (private val yourWishlistList: ArrayList<YourWishlist>
     override fun onBindViewHolder(holder: YourWishlistAdapter.WishlistViewHolder, position: Int) {
 
         val currentItem = yourWishlistList[position]
-        holder.wishlistName.text = currentItem.userWishlist
+        holder.wishlistName.text = currentItem.itemName
 
     }
 
@@ -26,9 +26,9 @@ class YourWishlistAdapter (private val yourWishlistList: ArrayList<YourWishlist>
         return yourWishlistList.size
     }
 
-    class WishlistViewHolder(wishlistView: View): RecyclerView.ViewHolder(wishlistView){
+    class WishlistViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
-        val wishlistName : TextView = wishlistView.findViewById(R.id.text_itemwish)
+        val wishlistName : TextView = itemView.findViewById(R.id.text_itemwish)
 
     }
 

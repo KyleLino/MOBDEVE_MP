@@ -29,7 +29,6 @@ class YourItemAdapter(private val yourItemList: ArrayList<YourItems>): RecyclerV
 
         val itemName : TextView = itemView.findViewById(R.id.text_itemname)
 
-
     }
 
 }

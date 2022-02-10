@@ -18,16 +18,16 @@ class OtherUserAdapter(private val otherUserList: ArrayList<OtherUsers>): Recycl
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
 
         val currentItem = otherUserList[position]
-        holder.username.text = currentItem.otherUser
+        holder.otherUser.text = currentItem.username
     }
 
     override fun getItemCount(): Int {
         return otherUserList.size
     }
 
-    class UserViewHolder(userView: View): RecyclerView.ViewHolder(userView){
+    class UserViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
-        var username : TextView = userView.findViewById(R.id.text_user_name)
+        var otherUser : TextView = itemView.findViewById(R.id.text_user_name)
 
     }
 

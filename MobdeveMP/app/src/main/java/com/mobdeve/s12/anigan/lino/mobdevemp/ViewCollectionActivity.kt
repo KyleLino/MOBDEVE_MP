@@ -3,6 +3,7 @@ package com.mobdeve.s12.anigan.lino.mobdevemp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
@@ -32,7 +33,7 @@ class ViewCollectionActivity : AppCompatActivity() {
         userRecyclerView.layoutManager=LinearLayoutManager(this)
         userRecyclerView.setHasFixedSize(true)
 
-        yourItemList = arrayListOf<YourItems>()
+        yourItemList = arrayListOf()
         getUserData()
 
         binding!!.additem!!.setOnClickListener {
@@ -52,19 +53,13 @@ class ViewCollectionActivity : AppCompatActivity() {
     private fun getUserData(){
 
         databaseReference = FirebaseDatabase.getInstance().getReference("UserItem")
-        var bundle = intent.extras
-        var bundleusername = bundle!!.getString("username")
-
         databaseReference.addValueEventListener(object : ValueEventListener{
 
             override fun onDataChange(snapshot: DataSnapshot) {
-
                 if(snapshot.exists()){
                     for(itemSnapshot in snapshot.children){
-
                         val item = itemSnapshot.getValue(YourItems::class.java)
                         yourItemList.add(item!!)
-
                     }
                     userRecyclerView.adapter = YourItemAdapter(yourItemList)
                 }
