@@ -46,11 +46,17 @@ class ViewCollectionActivity : AppCompatActivity() {
 
         binding!!.profileback!!.setOnClickListener {
             val gotoProfileActivity = Intent(applicationContext, ProfileActivity ::class.java)
+            var bundle = Bundle()
+            bundle.putString("username", bundleusername)
+            gotoProfileActivity.putExtras(bundle)
             startActivity(gotoProfileActivity )
         }
     }
 
     private fun getUserData(){
+
+        var bundle = intent.extras
+        var bundleusername = bundle!!.getString("username")
 
         databaseReference = FirebaseDatabase.getInstance().getReference("UserItem")
         databaseReference.addValueEventListener(object : ValueEventListener{
@@ -59,9 +65,13 @@ class ViewCollectionActivity : AppCompatActivity() {
                 if(snapshot.exists()){
                     for(itemSnapshot in snapshot.children){
                         val item = itemSnapshot.getValue(YourItems::class.java)
-                        yourItemList.add(item!!)
+                        if (item != null) {
+                            if (item.itemOwner == bundleusername){
+                                yourItemList.add(item!!)
+                            }
+                        }
                     }
-                    userRecyclerView.adapter = YourItemAdapter(yourItemList)
+                    userRecyclerView.adapter = YourItemAdapter(applicationContext,yourItemList)
                 }
             }
 

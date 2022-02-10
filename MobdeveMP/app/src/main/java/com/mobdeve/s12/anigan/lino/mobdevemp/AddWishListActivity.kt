@@ -21,6 +21,7 @@ class AddWishListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_add_wish_list)
 
         var bundle = intent.extras
+        var bundleusername = bundle!!.getString("username")
 
         binding = ActivityAddWishListBinding.inflate(layoutInflater)
         setContentView(binding!!.root)
@@ -36,7 +37,8 @@ class AddWishListActivity : AppCompatActivity() {
 
                 database = FirebaseDatabase.getInstance().getReference("UserWishListItem")
                 val UserWishList = owner?.let { it1 -> UserWishList(name, it1) }
-                database.child(name).setValue(UserWishList).addOnSuccessListener {
+                var id = database.push().key.toString()
+                database.child(id).setValue(UserWishList).addOnSuccessListener {
 
                     Log.i(TAG,"here")
 
@@ -63,6 +65,9 @@ class AddWishListActivity : AppCompatActivity() {
 
         binding!!.profileback!!.setOnClickListener {
             val gotoProfileActivity = Intent(applicationContext, ProfileActivity ::class.java)
+            var bundle = Bundle()
+            bundle.putString("username", bundleusername)
+            gotoProfileActivity.putExtras(bundle)
             startActivity(gotoProfileActivity )
         }
     }

@@ -45,6 +45,9 @@ class ProfileActivity : AppCompatActivity() {
 
         var bundle = intent.extras
         var bundleusername = bundle?.getString("username")
+        var bundlename = bundle?.getString("name")
+        var bundlepassword = bundle?.getString("password")
+
         binding!!.textusername.text = bundleusername
 
         binding!!.qrscanner.setOnClickListener {
@@ -58,7 +61,7 @@ class ProfileActivity : AppCompatActivity() {
             val gotoViewCollectionActivity = Intent(applicationContext, ViewCollectionActivity::class.java)
 
             var bundle = Bundle()
-            bundle.putString("username", bundleusername)
+            bundle.putString("username", username!!.text.toString())
 
             gotoViewCollectionActivity.putExtras(bundle)
             startActivity(gotoViewCollectionActivity)
@@ -77,8 +80,12 @@ class ProfileActivity : AppCompatActivity() {
 
         tradeoffers!!.setOnClickListener{
             Log.i(TAG,"pressed tradeoffers")
-
             val gotoTradeOffersActivity = Intent(applicationContext, TradeOffersActivity::class.java)
+
+            var bundle = Bundle()
+            bundle.putString("username", username!!.text.toString())
+
+            gotoTradeOffersActivity.putExtras(bundle)
             startActivity(gotoTradeOffersActivity)
         }
 
@@ -87,7 +94,7 @@ class ProfileActivity : AppCompatActivity() {
 
             val gotoWishlistActivity = Intent(applicationContext, WishlistActivity::class.java)
             var bundle = Bundle()
-            bundle.putString("username", bundleusername)
+            bundle.putString("username", username!!.text.toString())
 
             gotoWishlistActivity.putExtras(bundle)
             startActivity(gotoWishlistActivity)
@@ -107,6 +114,13 @@ class ProfileActivity : AppCompatActivity() {
 
         editprofile!!.setOnClickListener{
             Log.i(TAG,"pressed edit profile")
+            val gotoEditProfileActivity = Intent(applicationContext, EditProfileActivity::class.java)
+            var bundle = Bundle()
+            bundle.putString("username", bundleusername)
+            bundle.putString("name", bundlename)
+            bundle.putString("password", bundlepassword)
+            gotoEditProfileActivity.putExtras(bundle)
+            startActivity(gotoEditProfileActivity)
         }
 
         logout!!.setOnClickListener{

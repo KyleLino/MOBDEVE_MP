@@ -20,19 +20,29 @@ class EditItemActivity : AppCompatActivity() {
         binding = ActivityEditItemBinding.inflate(layoutInflater)
         setContentView(binding!!.root)
 
+        val bundle = intent.extras
+        var name = bundle!!.getString("itemname")
+        var price = bundle!!.getString("itemprice")
+        var description = bundle!!.getString("itemdescription")
+        var bundleusername = bundle!!.getString("itemowner")
+
         binding!!.donebutton!!.setOnClickListener{
             val gotoViewCollectionActivity = Intent(applicationContext, ViewCollectionActivity::class.java)
 
             val bundle = Bundle()
-            bundle.putString("name", binding!!.itemnameinput!!.toString())
-            bundle.putString("price", binding!!.itempriceinput!!.toString())
-            bundle.putString("description", binding!!.itemdescriptioninput!!.toString())
-
+            //bundle.putString("name", binding!!.itemnameinput!!.toString())
+            //bundle.putString("price", binding!!.itempriceinput!!.toString())
+            //bundle.putString("description", binding!!.itemdescriptioninput!!.toString())
+            bundle.putString("username", bundleusername)
+            gotoViewCollectionActivity.putExtras(bundle)
             startActivity(gotoViewCollectionActivity)
         }
 
         binding!!.profileback!!.setOnClickListener {
             val gotoProfileActivity = Intent(applicationContext, ProfileActivity ::class.java)
+            var bundle = Bundle()
+            bundle.putString("username", bundleusername)
+            gotoProfileActivity.putExtras(bundle)
             startActivity(gotoProfileActivity )
         }
     }

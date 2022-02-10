@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Switch
+import android.widget.Toast
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.getValue
 import com.mobdeve.s12.anigan.lino.mobdevemp.R
@@ -59,7 +60,14 @@ class FandomActivity : AppCompatActivity() {
 
         binding!!.profileback!!.setOnClickListener {
             val gotoProfileActivity = Intent(applicationContext, ProfileActivity ::class.java)
+            var bundle = Bundle()
+            bundle.putString("username", bundleusername)
+            gotoProfileActivity.putExtras(bundle)
             startActivity(gotoProfileActivity )
+        }
+
+        binding!!.buttonSAVE!!.setOnClickListener {
+            Toast.makeText(this, "fandoms saved", Toast.LENGTH_SHORT).show()
         }
 
         ref.addValueEventListener(object : ValueEventListener {

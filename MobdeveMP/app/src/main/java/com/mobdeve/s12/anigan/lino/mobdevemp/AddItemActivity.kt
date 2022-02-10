@@ -27,6 +27,7 @@ class AddItemActivity : AppCompatActivity() {
         super.onStart()
 
         var bundle = intent.extras
+        var bundleusername = bundle!!.getString("username")
 
         binding = ActivityAddItemBinding.inflate(layoutInflater)
         setContentView(binding!!.root)
@@ -44,7 +45,8 @@ class AddItemActivity : AppCompatActivity() {
 
                 database = FirebaseDatabase.getInstance().getReference("UserItem")
                 val UserItem = owner?.let { it1 -> UserItem(name,price,description, it1) }
-                database.child(name).setValue(UserItem).addOnSuccessListener {
+                var id = database.push().key.toString()
+                database.child(id).setValue(UserItem).addOnSuccessListener {
 
                     Log.i(TAG,"here")
 
@@ -73,6 +75,9 @@ class AddItemActivity : AppCompatActivity() {
 
         binding!!.profileback!!.setOnClickListener {
             val gotoProfileActivity = Intent(applicationContext, ProfileActivity ::class.java)
+            var bundle = Bundle()
+            bundle.putString("username", bundleusername)
+            gotoProfileActivity.putExtras(bundle)
             startActivity(gotoProfileActivity )
         }
     }

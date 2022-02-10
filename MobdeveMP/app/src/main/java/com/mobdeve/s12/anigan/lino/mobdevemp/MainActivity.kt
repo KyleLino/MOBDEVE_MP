@@ -60,7 +60,10 @@ class MainActivity : AppCompatActivity() {
         binding.loginbutton.setOnClickListener{
 
             val username = binding.textusername.text.toString()
-            val password = binding.textpassword.text.toString()
+            var password = binding.textpassword.text.toString()
+
+            var name: String = ""
+            //var password: String = ""
 
             if(username.isEmpty() || password.isEmpty()){
                 Log.i(TAG,"ETOOOOOOO")
@@ -81,6 +84,8 @@ class MainActivity : AppCompatActivity() {
 
                             if (value!!.username == (username) && value!!.password == password){
                                 isReal = true
+                                name = value!!.name
+                                password = value!!.password
                             }
 
                             list.add(value!!)
@@ -91,6 +96,8 @@ class MainActivity : AppCompatActivity() {
 
                             var bundle = Bundle()
                             bundle.putString("username", binding.textusername.text.toString())
+                            bundle.putString("name", name)
+                            bundle.putString("password", password)
                             gotoProfileActivity.putExtras(bundle)
                             startActivity(gotoProfileActivity)
                         }

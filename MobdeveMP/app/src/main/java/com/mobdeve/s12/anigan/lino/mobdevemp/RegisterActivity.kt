@@ -41,8 +41,9 @@ class RegisterActivity : AppCompatActivity() {
             if (username.isNotEmpty() && name.isNotEmpty() && password.isNotEmpty() && password == confirmpassword) {
 
                 database = FirebaseDatabase.getInstance().getReference("User")
-                val User = User(username, name, password, 1,1,1,1,1,1,1,1,1,1,1)
-                database.child(username).setValue(User).addOnSuccessListener {
+                var id = database.push().key.toString()
+                val User = User(username, name, password, 1,0,1,1,1,1,1,1,1,1,1)
+                database.child(id).setValue(User).addOnSuccessListener {
 
                     binding.textusername.text.clear()
                     binding.textname.text.clear()

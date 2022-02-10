@@ -46,9 +46,20 @@ class WishlistActivity : AppCompatActivity() {
             startActivity(gotoAddWishListActivity)
         }
 
+        binding!!.profileback!!.setOnClickListener {
+            val gotoProfileActivity = Intent(applicationContext, ProfileActivity ::class.java)
+            var bundle = Bundle()
+            bundle.putString("username", bundleusername)
+            gotoProfileActivity.putExtras(bundle)
+            startActivity(gotoProfileActivity )
+        }
+
     }
 
     private fun getUserData() {
+
+        var bundle = intent.extras
+        var bundleusername = bundle!!.getString("username")
 
         databaseReference = FirebaseDatabase.getInstance().getReference("UserWishListItem")
         databaseReference.addValueEventListener(object : ValueEventListener {
@@ -57,10 +68,12 @@ class WishlistActivity : AppCompatActivity() {
 
                 if (snapshot.exists()) {
                     for (wishlistSnapshot in snapshot.children) {
-
                         val yourWishlist = wishlistSnapshot.getValue(YourWishlist::class.java)
-                        yourWishlistList.add(yourWishlist!!)
-
+                        if (yourWishlist != null) {
+                            if(yourWishlist.itemOwner == bundleusername){
+                                yourWishlistList.add(yourWishlist!!)
+                            }
+                        }
                     }
                     userRecyclerView.adapter = YourWishlistAdapter(yourWishlistList)
                 }

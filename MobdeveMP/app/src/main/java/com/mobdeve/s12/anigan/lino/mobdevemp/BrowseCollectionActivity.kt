@@ -26,6 +26,9 @@ class BrowseCollectionActivity : AppCompatActivity() {
         binding = ActivityBrowseCollectionBinding.inflate(layoutInflater)
         setContentView(binding!!.root)
 
+        var bundle = intent.extras
+        var bundleusername = bundle!!.getString("username")
+
 
         userRecyclerView = findViewById(R.id.other_items)
         userRecyclerView.layoutManager = LinearLayoutManager(this)
@@ -34,13 +37,19 @@ class BrowseCollectionActivity : AppCompatActivity() {
         getUserData()
 
         binding!!.profileback!!.setOnClickListener {
-            val gotoProfileActivity = Intent(applicationContext, ProfileActivity::class.java)
-            startActivity(gotoProfileActivity)
+            val gotoProfileActivity = Intent(applicationContext, ProfileActivity ::class.java)
+            var bundle = Bundle()
+            bundle.putString("username", bundleusername)
+            gotoProfileActivity.putExtras(bundle)
+            startActivity(gotoProfileActivity )
         }
     }
 
 
     private fun getUserData() {
+
+        var bundle = intent.extras
+        var bundleusername = bundle!!.getString("username")
 
         databaseReference = FirebaseDatabase.getInstance().getReference("User")
         databaseReference.addValueEventListener(object : ValueEventListener {
@@ -48,7 +57,11 @@ class BrowseCollectionActivity : AppCompatActivity() {
                 if (snapshot.exists()) {
                     for (userSnapshot in snapshot.children) {
                         val user = userSnapshot.getValue(OtherUsers::class.java)
-                        otherUserList.add(user!!)
+                        if (user != null) {
+                            if(user.username != bundleusername){
+                                otherUserList.add(user!!)
+                            }
+                        }
                     }
                     userRecyclerView.adapter = OtherUserAdapter(otherUserList)
                     Toast.makeText(applicationContext, "$otherUserList", Toast.LENGTH_SHORT).show()
