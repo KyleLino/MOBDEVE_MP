@@ -1,5 +1,6 @@
 package com.mobdeve.s12.anigan.lino.mobdevemp
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -26,6 +27,7 @@ class ProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
+        checkLogin()
     }
 
     override fun onStart() {
@@ -130,4 +132,15 @@ class ProfileActivity : AppCompatActivity() {
         }
 
     }
-}
+
+     private fun checkLogin (){
+         var bundle = intent.extras
+         var bundleusername = bundle?.getString("username")
+         val goToMainActivity = Intent(applicationContext, MainActivity::class.java)
+
+         if(bundleusername == null){
+             startActivity(goToMainActivity)
+         }
+     }
+
+    

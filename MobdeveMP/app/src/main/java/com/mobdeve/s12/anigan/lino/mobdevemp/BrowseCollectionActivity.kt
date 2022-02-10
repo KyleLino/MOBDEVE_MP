@@ -64,7 +64,6 @@ class BrowseCollectionActivity : AppCompatActivity() {
                         }
                     }
                     userRecyclerView.adapter = OtherUserAdapter(otherUserList)
-                    Toast.makeText(applicationContext, "$otherUserList", Toast.LENGTH_SHORT).show()
                 }
             }
 
