@@ -47,8 +47,8 @@ class ProfileActivity : AppCompatActivity() {
 
         var bundle = intent.extras
         var bundleusername = bundle?.getString("username")
-        var bundlename = bundle?.getString("name")
-        var bundlepassword = bundle?.getString("password")
+        //var bundlename = bundle?.getString("name")
+        //var bundlepassword = bundle?.getString("password")
 
         binding!!.textusername.text = bundleusername
 
@@ -58,9 +58,10 @@ class ProfileActivity : AppCompatActivity() {
         }
 
 
-        viewcollections!!.setOnClickListener{
-            Log.i(TAG,"pressed view collections")
-            val gotoViewCollectionActivity = Intent(applicationContext, ViewCollectionActivity::class.java)
+        viewcollections!!.setOnClickListener {
+            Log.i(TAG, "pressed view collections")
+            val gotoViewCollectionActivity =
+                Intent(applicationContext, ViewCollectionActivity::class.java)
 
             var bundle = Bundle()
             bundle.putString("username", username!!.text.toString())
@@ -69,9 +70,10 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(gotoViewCollectionActivity)
         }
 
-        usercollections!!.setOnClickListener{
-            Log.i(TAG,"pressed user collections")
-            val gotoUserCollection = Intent(applicationContext, BrowseCollectionActivity::class.java)
+        usercollections!!.setOnClickListener {
+            Log.i(TAG, "pressed user collections")
+            val gotoUserCollection =
+                Intent(applicationContext, BrowseCollectionActivity::class.java)
 
             var bundle = Bundle()
             bundle.putString("username", username!!.text.toString())
@@ -80,9 +82,10 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(gotoUserCollection)
         }
 
-        tradeoffers!!.setOnClickListener{
-            Log.i(TAG,"pressed tradeoffers")
-            val gotoTradeOffersActivity = Intent(applicationContext, TradeOffersActivity::class.java)
+        tradeoffers!!.setOnClickListener {
+            Log.i(TAG, "pressed tradeoffers")
+            val gotoTradeOffersActivity =
+                Intent(applicationContext, TradeOffersActivity::class.java)
 
             var bundle = Bundle()
             bundle.putString("username", username!!.text.toString())
@@ -91,8 +94,8 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(gotoTradeOffersActivity)
         }
 
-        wishlist!!.setOnClickListener{
-            Log.i(TAG,"pressed wishlist")
+        wishlist!!.setOnClickListener {
+            Log.i(TAG, "pressed wishlist")
 
             val gotoWishlistActivity = Intent(applicationContext, WishlistActivity::class.java)
             var bundle = Bundle()
@@ -102,45 +105,46 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(gotoWishlistActivity)
         }
 
-        fandoms!!.setOnClickListener{
-            Log.i(TAG,"pressed fandoms")
+        fandoms!!.setOnClickListener {
+            Log.i(TAG, "pressed fandoms")
 
             val gotoFandomActivity = Intent(applicationContext, FandomActivity::class.java)
-
             var bundle = Bundle()
-            bundle.putString("username", username!!.text.toString())
-
+            bundle.putString("username", bundleusername)
+            //bundle.putString("name", bundlename)
+            //bundle.putString("password", bundlepassword)
             gotoFandomActivity.putExtras(bundle)
             startActivity(gotoFandomActivity)
         }
 
-        editprofile!!.setOnClickListener{
-            Log.i(TAG,"pressed edit profile")
-            val gotoEditProfileActivity = Intent(applicationContext, EditProfileActivity::class.java)
+        editprofile!!.setOnClickListener {
+            Log.i(TAG, "pressed edit profile")
+            val gotoEditProfileActivity =
+                Intent(applicationContext, EditProfileActivity::class.java)
             var bundle = Bundle()
             bundle.putString("username", bundleusername)
-            bundle.putString("name", bundlename)
-            bundle.putString("password", bundlepassword)
+            //bundle.putString("name", bundlename)
+            //bundle.putString("password", bundlepassword)
             gotoEditProfileActivity.putExtras(bundle)
             startActivity(gotoEditProfileActivity)
         }
 
-        logout!!.setOnClickListener{
-            Log.i(TAG,"pressed log out")
+        logout!!.setOnClickListener {
+            Log.i(TAG, "pressed log out")
             val gotoMainActivity = Intent(applicationContext, MainActivity::class.java)
             startActivity(gotoMainActivity)
         }
-
     }
 
-     private fun checkLogin (){
-         var bundle = intent.extras
-         var bundleusername = bundle?.getString("username")
-         val goToMainActivity = Intent(applicationContext, MainActivity::class.java)
+    private fun checkLogin() {
+        var bundle = intent.extras
+        var bundleusername = bundle?.getString("username")
+        val goToMainActivity = Intent(applicationContext, MainActivity::class.java)
 
-         if(bundleusername == null){
-             startActivity(goToMainActivity)
-         }
-     }
+        if (bundleusername == null) {
+            startActivity(goToMainActivity)
+        }
+    }
+}
 
     

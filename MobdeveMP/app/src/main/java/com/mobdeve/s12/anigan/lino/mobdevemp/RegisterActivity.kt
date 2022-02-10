@@ -42,7 +42,7 @@ class RegisterActivity : AppCompatActivity() {
 
                 database = FirebaseDatabase.getInstance().getReference("User")
                 var id = database.push().key.toString()
-                val User = User(username, name, password, 1,0,1,1,1,1,1,1,1,1,1)
+                val User = User(username, name, password, true,false,true,true,true,true,true,true,true,true,true)
                 database.child(id).setValue(User).addOnSuccessListener {
 
                     binding.textusername.text.clear()

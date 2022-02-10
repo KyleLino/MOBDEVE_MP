@@ -6,25 +6,25 @@ class User(){
     lateinit var name: String
     lateinit var password: String
 
-    var bts: Int = 0
-    var exo: Int = 0
-    var wannaone: Int = 0
-    var got7: Int = 0
-    var nct: Int = 0
+    var bts: Boolean = false
+    var exo: Boolean = false
+    var wannaone: Boolean = false
+    var got7: Boolean = false
+    var nct: Boolean = false
 
-    var bp: Int = 0
-    var twice: Int = 0
-    var rv: Int = 0
-    var everglow: Int = 0
-    var mamamoo: Int = 0
+    var bp: Boolean = false
+    var twice: Boolean = false
+    var rv: Boolean = false
+    var everglow: Boolean = false
+    var mamamoo: Boolean = false
 
-    var others: Int = 0
+    var others: Boolean = false
 
 
 
     //lateinit var exo: Int
 
-    constructor(username : String, name : String, password : String, bts : Int, exo:Int,wannaone:Int, got7:Int, nct:Int, bp:Int, twice:Int, rv:Int, everglow:Int, mamamoo:Int, others:Int) : this(){
+    constructor(username : String, name : String, password : String, bts : Boolean, exo:Boolean,wannaone:Boolean, got7:Boolean, nct:Boolean, bp:Boolean, twice:Boolean, rv:Boolean, everglow:Boolean, mamamoo:Boolean, others:Boolean) : this(){
         this.username = username
         this.name = name
         this.password = password
