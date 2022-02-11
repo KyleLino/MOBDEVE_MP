@@ -31,13 +31,13 @@ class EditProfileActivity : AppCompatActivity() {
 
         var bundle = intent.extras
         var bundleusername = bundle?.getString("username")
-        var bundlename = bundle?.getString("name")
-        var bundlepassword = bundle?.getString("password")
+        //var bundlename = bundle?.getString("name")
+        //var bundlepassword = bundle?.getString("password")
 
         binding!!.textusername.hint = bundleusername
-        binding!!.textname.hint = bundlename
-        binding!!.textpassword.hint = bundlepassword
-        binding!!.textconfirmpassword.hint = bundlepassword
+        //binding!!.textname.hint = bundlename
+        //binding!!.textpassword.hint = bundlepassword
+        //binding!!.textconfirmpassword.hint = bundlepassword
 
         binding.savebutton.setOnClickListener {
 
@@ -65,7 +65,7 @@ class EditProfileActivity : AppCompatActivity() {
 
                             var value = postsnapshot.getValue<User>()
 
-                            if (value!!.username == bundleusername && value!!.name == bundlename && value.password == bundlepassword){
+                            if (value!!.username == bundleusername ){
                                 isReal = true
                                 //value!!.name = name
                                 //value!!.username = username
@@ -108,6 +108,46 @@ class EditProfileActivity : AppCompatActivity() {
             bundle.putString("username", bundleusername)
             gotoProfileActivity.putExtras(bundle)
             startActivity(gotoProfileActivity )
+        }
+
+
+        binding.deletebutton.setOnClickListener {
+            databaseReference.addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    // This method is called once with the initial value and again
+                    // whenever data at this location is updated.
+
+                    var isReal = false
+                    var id = ""
+                    var list = ArrayList<User>()
+                    for (postsnapshot in dataSnapshot.children){
+
+                        var value = postsnapshot.getValue<User>()
+
+                        if (value!!.username == bundleusername){
+                            isReal = true
+                            //value!!.name = name
+                            //value!!.username = username
+                            //value!!.password = password
+                            id = postsnapshot.key.toString()
+
+                            //databaseReference.child(id).setValue(username)
+                        }
+
+                        list.add(value!!)
+                    }
+
+                    if (isReal){
+                        databaseReference.child(id).removeValue()
+                        val gotoMainActivity = Intent(applicationContext, MainActivity::class.java)
+                        startActivity(gotoMainActivity)
+                    }
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    // Failed to read value
+                }
+            })
         }
     }
 }
