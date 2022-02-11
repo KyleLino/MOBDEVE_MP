@@ -10,6 +10,8 @@
         <entry key="..\:/Users/Personal/Documents/GitHub/MOBDEVE_MP/MobdeveMP/app/src/main/res/layout/activity_edit_item.xml" value="0.2015625" />
         <entry key="..\:/Users/Personal/Documents/GitHub/MOBDEVE_MP/MobdeveMP/app/src/main/res/layout/activity_fandom.xml" value="0.33" />
         <entry key="..\:/Users/Personal/Documents/GitHub/MOBDEVE_MP/MobdeveMP/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/Personal/Documents/GitHub/MOBDEVE_MP/MobdeveMP/app/src/main/res/layout/activity_other_item.xml" value="0.33" />
+        <entry key="..\:/Users/Personal/Documents/GitHub/MOBDEVE_MP/MobdeveMP/app/src/main/res/layout/activity_pick_trade.xml" value="0.33" />
         <entry key="..\:/Users/Personal/Documents/GitHub/MOBDEVE_MP/MobdeveMP/app/src/main/res/layout/activity_profile.xml" value="0.25" />
         <entry key="..\:/Users/Personal/Documents/GitHub/MOBDEVE_MP/MobdeveMP/app/src/main/res/layout/activity_qr.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Personal/Documents/GitHub/MOBDEVE_MP/MobdeveMP/app/src/main/res/layout/activity_register.xml" value="0.33" />
@@ -17,10 +19,14 @@
         <entry key="..\:/Users/Personal/Documents/GitHub/MOBDEVE_MP/MobdeveMP/app/src/main/res/layout/activity_user_collection.xml" value="0.2015625" />
         <entry key="..\:/Users/Personal/Documents/GitHub/MOBDEVE_MP/MobdeveMP/app/src/main/res/layout/activity_view_collection.xml" value="0.33" />
         <entry key="..\:/Users/Personal/Documents/GitHub/MOBDEVE_MP/MobdeveMP/app/src/main/res/layout/activity_view_item.xml" value="0.2484375" />
+        <entry key="..\:/Users/Personal/Documents/GitHub/MOBDEVE_MP/MobdeveMP/app/src/main/res/layout/activity_view_other_user_profile.xml" value="0.33" />
         <entry key="..\:/Users/Personal/Documents/GitHub/MOBDEVE_MP/MobdeveMP/app/src/main/res/layout/activity_wishlist.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Personal/Documents/GitHub/MOBDEVE_MP/MobdeveMP/app/src/main/res/layout/item_row_fandom.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/Personal/Documents/GitHub/MOBDEVE_MP/MobdeveMP/app/src/main/res/layout/item_row_other_collection.xml" value="0.31614583333333335" />
+        <entry key="..\:/Users/Personal/Documents/GitHub/MOBDEVE_MP/MobdeveMP/app/src/main/res/layout/item_row_other_user_items.xml" value="0.3625" />
         <entry key="..\:/Users/Personal/Documents/GitHub/MOBDEVE_MP/MobdeveMP/app/src/main/res/layout/item_row_save.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/Personal/Documents/GitHub/MOBDEVE_MP/MobdeveMP/app/src/main/res/layout/item_row_trade_offers.xml" value="0.24635416666666668" />
+        <entry key="..\:/Users/Personal/Documents/GitHub/MOBDEVE_MP/MobdeveMP/app/src/main/res/layout/item_row_user_wishlist.xml" value="0.3625" />
         <entry key="..\:/Users/Personal/Documents/GitHub/MOBDEVE_MP/MobdeveMP/app/src/main/res/layout/item_row_your_collection.xml" value="0.23541666666666666" />
         <entry key="..\:/Users/Personal/Documents/GitHub/MOBDEVE_MP/MobdeveMP/app/src/main/res/layout/item_row_your_collections.xml" value="1.6142857142857143" />
         <entry key="..\:/Users/Personal/Documents/GitHub/MOBDEVE_MP/MobdeveMP/app/src/main/res/layout/item_row_your_wishlist.xml" value="0.33" />

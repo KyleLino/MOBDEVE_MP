@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.getValue
+import com.mobdeve.s12.anigan.lino.mobdevemp.dao.UserItem
 import com.mobdeve.s12.anigan.lino.mobdevemp.databinding.ActivityViewItemBinding
 
 class ViewItemActivity : AppCompatActivity() {

@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Toast
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.mobdeve.s12.anigan.lino.mobdevemp.dao.UserWishList
 import com.mobdeve.s12.anigan.lino.mobdevemp.databinding.ActivityAddWishListBinding
 
 class AddWishListActivity : AppCompatActivity() {

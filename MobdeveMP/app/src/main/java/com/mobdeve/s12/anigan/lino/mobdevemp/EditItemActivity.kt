@@ -7,8 +7,8 @@ import android.util.Log
 import android.widget.Toast
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.getValue
+import com.mobdeve.s12.anigan.lino.mobdevemp.dao.UserItem
 import com.mobdeve.s12.anigan.lino.mobdevemp.databinding.ActivityEditItemBinding
-import com.mobdeve.s12.anigan.lino.mobdevemp.databinding.ActivityEditProfileBinding
 
 class EditItemActivity : AppCompatActivity() {
 

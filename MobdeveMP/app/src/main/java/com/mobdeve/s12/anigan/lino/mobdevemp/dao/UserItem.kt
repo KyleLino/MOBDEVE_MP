@@ -1,4 +1,4 @@
-package com.mobdeve.s12.anigan.lino.mobdevemp
+package com.mobdeve.s12.anigan.lino.mobdevemp.dao
 
 class UserItem(){
     lateinit var itemName: String

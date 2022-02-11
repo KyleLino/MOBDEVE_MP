@@ -4,13 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Switch
 import android.widget.Toast
-import com.google.firebase.database.*
 import com.google.firebase.database.ktx.getValue
-import com.mobdeve.s12.anigan.lino.mobdevemp.R
 import com.mobdeve.s12.anigan.lino.mobdevemp.databinding.ActivityFandomBinding
-import com.mobdeve.s12.anigan.lino.mobdevemp.databinding.ActivityMainBinding
 import com.google.firebase.database.DatabaseError
 
 import com.google.firebase.database.DataSnapshot
@@ -20,7 +16,7 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.DatabaseReference
 
 import com.google.firebase.database.FirebaseDatabase
-import com.mobdeve.s12.anigan.lino.mobdevemp.databinding.ActivityProfileBinding
+import com.mobdeve.s12.anigan.lino.mobdevemp.dao.User
 
 
 class FandomActivity : AppCompatActivity() {

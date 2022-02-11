@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.Toast
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.mobdeve.s12.anigan.lino.mobdevemp.dao.User
 import com.mobdeve.s12.anigan.lino.mobdevemp.databinding.ActivityRegisterBinding
 
 class RegisterActivity : AppCompatActivity() {

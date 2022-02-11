@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <TableRow
 
         android:id="@+id/your_items"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/text_itemname"
-            android:layout_width="286dp"
+            android:id="@+id/text_otherUserItem"
+            android:layout_width="281dp"
             android:layout_height="wrap_content"
 
             android:layout_margin="10dp"
@@ -22,16 +29,15 @@
             android:textSize="22sp" />
 
         <Button
-            android:id="@+id/button_edit"
-            android:backgroundTint="#DBA06B"
+            android:id="@+id/button_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-
             android:layout_weight="1"
+            android:backgroundTint="#DBA06B"
             android:gravity="center"
             android:padding="3dp"
-            android:text="EDIT" />
+            android:text="VIEW" />
 
 
     </TableRow>

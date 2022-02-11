@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MobdeveMP">
         <activity
+            android:name=".PickTradeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OtherItemActivity"
+            android:exported="false" />
+        <activity
+            android:name=".model.OtherItemActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewOtherUserProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".EditProfileActivity"
             android:exported="false" />
         <activity

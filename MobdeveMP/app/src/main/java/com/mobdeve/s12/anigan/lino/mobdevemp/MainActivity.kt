@@ -4,16 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.database.*
-import com.google.firebase.database.ktx.database
 import com.google.firebase.database.ktx.getValue
-import com.google.firebase.ktx.Firebase
+import com.mobdeve.s12.anigan.lino.mobdevemp.dao.User
 import com.mobdeve.s12.anigan.lino.mobdevemp.databinding.ActivityMainBinding
-import com.mobdeve.s12.anigan.lino.mobdevemp.databinding.ActivityRegisterBinding
 
 class MainActivity : AppCompatActivity() {
 
