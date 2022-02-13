@@ -30,7 +30,7 @@
         android:id="@+id/wishlist_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="50dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +50,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/your_wishlist"
             android:layout_width="match_parent"
-            android:layout_height="500dp"
+            android:layout_height="400dp"
             android:clipToPadding="false"
             android:padding="5dp"
             tools:listitem="@layout/item_row_your_wishlist" />
@@ -63,7 +63,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="70dp"
+        android:layout_marginBottom="60dp"
         android:clickable="true"
         android:gravity="center"
         android:text="ADD WISHLIST"
