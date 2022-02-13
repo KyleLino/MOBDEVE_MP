@@ -5,12 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".EditItemActivity"
-    android:background="@drawable/horizontalbars">
+    android:background="@drawable/horizontal_dark">
 
     <TextView
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="#d6d6d6"
         android:id="@+id/profileback"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:clickable="true"
         android:gravity="center"
         android:text="Profile"
@@ -22,75 +25,79 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.01" />
 
-    <EditText
-        android:id="@+id/itemdescriptioninput"
-        android:layout_width="300dp"
-        android:layout_height="200dp"
 
-        android:text=""
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.595" />
 
-    <EditText
-        android:id="@+id/itempriceinput"
-        android:layout_width="300dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        android:text=""
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="100dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.371" />
+        android:gravity="center">
 
-    <EditText
-        android:id="@+id/itemnameinput"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
 
-        android:text=""
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.288" />
+        <TextView
+            android:fontFamily="@font/lato_bold"
+            android:textColor="#d6d6d6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="EDIT ITEM"
+            android:textSize="40dp" />
 
-    <TextView
+        <EditText
+            android:fontFamily="@font/lato_regular"
+            android:textColor="#d6d6d6"
+            android:background="@drawable/border"
+            android:id="@+id/itemdescriptioninput"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:text=""
+            android:textSize="20dp"
+            android:padding="10dp"
+            android:layout_marginBottom="15dp"/>
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:gravity="center"
-        android:text="EDIT ITEM"
-        android:textSize="40dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.163" />
+        <EditText
+            android:fontFamily="@font/lato_regular"
+            android:textColor="#d6d6d6"
+            android:background="@drawable/border"
+            android:padding="8dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/itempriceinput"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="20dp" />
 
-    <Button
-        android:id="@+id/donebutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="DONE"
-        android:backgroundTint="#DBA06B"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.875" />
+        <EditText
+            android:fontFamily="@font/lato_regular"
+            android:textColor="#d6d6d6"
+            android:background="@drawable/border"
+            android:padding="8dp"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/itemnameinput"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="20dp" />
+
+        <Button
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="#d6d6d6"
+            android:id="@+id/donebutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DONE"
+            android:backgroundTint="#E66E00"
+            android:layout_marginTop="30dp"/>
+
+
+    </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

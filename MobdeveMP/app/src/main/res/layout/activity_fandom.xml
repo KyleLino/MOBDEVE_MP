@@ -5,32 +5,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FandomActivity"
-    android:background="@drawable/horizontalbars">
+    android:background="@drawable/slanted_dark">
 
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:fontFamily="@font/lato_bold"
         android:gravity="center"
         android:text="Manage Fandoms"
-        android:textColor="#2B82DD"
+        android:textColor="#d6d6d6"
         android:textSize="40dp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.159" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/profileback"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:clickable="true"
+        android:fontFamily="@font/montserrat_bold"
         android:gravity="center"
         android:text="Profile"
+        android:textColor="#d6d6d6"
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.952"
@@ -39,187 +43,180 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.008" />
 
-    <Button
-        android:id="@+id/buttonSAVE"
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:id="@+id/fandom_list"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SAVE"
-        android:backgroundTint="#DBA06B"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.923" />
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView2">
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView2">
+
+
+            <CheckBox
+                android:id="@+id/checkBoxG7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="GOT7"
+                android:fontFamily="@font/mokoto"
+                android:textColor="#d6d6d6"
+                android:paddingStart="5dp"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/checkBoxEG"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EVERGLOW"
+                android:fontFamily="@font/mokoto"
+                android:textColor="#d6d6d6"
+                android:paddingStart="5dp"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/checkBoxBP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BLACKPINK"
+                android:fontFamily="@font/mokoto"
+                android:textColor="#d6d6d6"
+                android:paddingStart="5dp"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/checkBoxRV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="RED VELVET"
+                android:fontFamily="@font/mokoto"
+                android:textColor="#d6d6d6"
+                android:paddingStart="5dp"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/checkBoxMMOO"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MAMAMOO"
+                android:fontFamily="@font/mokoto"
+                android:textColor="#d6d6d6"
+                android:paddingStart="5dp"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView2">
+
+            <CheckBox
+                android:id="@+id/checkBoxTWICE"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TWICE"
+                android:fontFamily="@font/mokoto"
+                android:textColor="#d6d6d6"
+                android:paddingStart="5dp"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/checkBoxW1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="WANNAONE"
+                android:fontFamily="@font/mokoto"
+                android:textColor="#d6d6d6"
+                android:paddingStart="5dp"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/checkBoxNCT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="NCT"
+                android:fontFamily="@font/mokoto"
+                android:textColor="#d6d6d6"
+                android:paddingStart="5dp"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/checkBoxBTS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BTS"
+                android:fontFamily="@font/mokoto"
+                android:textColor="#d6d6d6"
+                android:paddingStart="5dp"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/checkBoxEXO"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EXO"
+                android:fontFamily="@font/mokoto"
+                android:textColor="#d6d6d6"
+                android:paddingStart="5dp"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
 
     <CheckBox
         android:id="@+id/checkBoxOTHERS"
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:layout_marginTop="8dp"
         android:text="OTHERS"
-        android:textColor="#605F5F"
-        android:textSize="20sp"
+        android:fontFamily="@font/mokoto"
+        android:textColor="#d6d6d6"
+        android:paddingStart="5dp"
+        android:textSize="17sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fandom_list" />
 
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintLeft_toLeftOf="parent"
-
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.815" />
-
-    <CheckBox
-        android:id="@+id/checkBoxG7"
-        android:layout_width="150dp"
+    <Button
+        android:fontFamily="@font/montserrat_bold"
+        android:id="@+id/buttonSAVE"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="GOT7"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#E66E00"
+        android:text="SAVE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkBoxOTHERS" />
 
-        android:textColor="#605F5F"
-        android:textSize="20sp"
-        android:textStyle="bold"
 
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.13"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.604" />
 
-    <CheckBox
-        android:id="@+id/checkBoxEG"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="EVERGLOW"
-        android:textColor="#605F5F"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.854"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.604" />
 
-    <CheckBox
-        android:id="@+id/checkBoxBP"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="BLACKPINK"
-        android:textColor="#605F5F"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.854"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.292" />
-
-    <CheckBox
-        android:id="@+id/checkBoxRV"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="RED VELVET"
-        android:textColor="#605F5F"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.854"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.503" />
-
-    <CheckBox
-        android:id="@+id/checkBoxTWICE"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="TWICE"
-        android:textColor="#605F5F"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.854"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.399" />
-
-    <CheckBox
-        android:id="@+id/checkBoxW1"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="WANNAONE"
-        android:textColor="#605F5F"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.137"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.503" />
-
-    <CheckBox
-        android:id="@+id/checkBoxNCT"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="NCT"
-        android:textColor="#605F5F"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.137"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.713" />
-
-    <CheckBox
-        android:id="@+id/checkBoxBTS"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="BTS"
-        android:textColor="#605F5F"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.137"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.292" />
-
-    <CheckBox
-        android:id="@+id/checkBoxEXO"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="EXO"
-        android:textColor="#605F5F"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.13"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.399" />
-
-    <CheckBox
-        android:id="@+id/checkBoxMMOO"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="MAMAMOO"
-        android:textColor="#605F5F"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.854"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.713" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
