@@ -5,9 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AddItemActivity"
-    android:background="@drawable/horizontalbars">
+    android:background="@drawable/horizontal_dark">
 
     <TextView
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="#d6d6d6"
         android:id="@+id/profileback"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,72 +24,83 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.008" />
 
-    <TextView
-
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:clickable="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="75dp"
         android:gravity="center"
-        android:text="ADD ITEM"
-        android:textSize="40dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.087" />
+        app:layout_constraintVertical_bias="0.08">
 
-    <EditText
-        android:id="@+id/itemnameinput"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        <TextView
+            android:id="@+id/textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="65dp"
+            android:layout_marginBottom="30dp"
+            android:clickable="true"
+            android:fontFamily="@font/lato_bold"
+            android:gravity="center"
+            android:text="ADD ITEM"
+            android:textColor="#d6d6d6"
+            android:textSize="40dp" />
 
-        android:hint="item name here"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.213" />
+        <EditText
+            android:id="@+id/itemnameinput"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/border"
+            android:fontFamily="@font/lato_regular"
+            android:hint="Item Name"
+            android:paddingStart="10dp"
 
-    <EditText
-        android:id="@+id/itempriceinput"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
+            android:textColor="#d6d6d6"
+            android:textSize="20dp" />
 
-        android:hint="price here"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.297" />
+        <EditText
+            android:id="@+id/itempriceinput"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/border"
+            android:fontFamily="@font/lato_regular"
+            android:hint="Item Value"
+            android:paddingStart="10dp"
 
-    <EditText
-        android:id="@+id/itemdescriptioninput"
-        android:layout_width="300dp"
-        android:layout_height="200dp"
+            android:textColor="#d6d6d6"
+            android:textSize="20dp" />
 
-        android:hint="description here"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        <EditText
+            android:id="@+id/itemdescriptioninput"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:background="@drawable/border"
+            android:fontFamily="@font/lato_regular"
+            android:hint="Item Description "
+            android:paddingStart="10dp"
 
-    <Button
-        android:id="@+id/addbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ADD"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.875" />
+            android:textColor="#d6d6d6"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/addbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="#E66E00"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="ADD"
+            android:textColor="#d6d6d6" />
+
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

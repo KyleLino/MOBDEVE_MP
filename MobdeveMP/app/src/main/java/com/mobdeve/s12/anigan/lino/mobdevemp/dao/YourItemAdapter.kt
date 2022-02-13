@@ -24,6 +24,8 @@ class YourItemAdapter(private val context: Context, private val yourItemList: Ar
 
         val currentItem = yourItemList[position]
         holder.itemName.text = currentItem.itemName
+        holder.itemPrice.text = currentItem.itemPrice
+        holder.itemDescription.text = currentItem.itemDescription
 
         holder.viewButton.setOnClickListener {
             val gotoViewItemActivity = Intent(context, ViewItemActivity::class.java)
@@ -48,6 +50,8 @@ class YourItemAdapter(private val context: Context, private val yourItemList: Ar
 
 
         val itemName : TextView = itemView.findViewById(R.id.text_itemname)
+        val itemPrice : TextView = itemView.findViewById(R.id.text_itemprice)
+        val itemDescription : TextView = itemView.findViewById(R.id.text_itemdescription)
         val viewButton : Button = itemView.findViewById(R.id.button_view)
 
     }

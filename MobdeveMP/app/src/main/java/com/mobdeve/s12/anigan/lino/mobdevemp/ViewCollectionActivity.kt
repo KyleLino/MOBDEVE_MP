@@ -29,7 +29,7 @@ class ViewCollectionActivity : AppCompatActivity() {
         var bundleusername = bundle!!.getString("username")
 
         userRecyclerView = findViewById(R.id.your_items)
-        userRecyclerView.layoutManager=LinearLayoutManager(this)
+        userRecyclerView.layoutManager= LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         userRecyclerView.setHasFixedSize(true)
 
         yourItemList = arrayListOf()
