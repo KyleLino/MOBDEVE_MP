@@ -21,6 +21,7 @@ class UserItemAdapter(private val userItemList: ArrayList<UserItem>): RecyclerVi
 
         val currentItem = userItemList[position]
         holder.itemName.text = currentItem.itemName
+        
 
     }
 
