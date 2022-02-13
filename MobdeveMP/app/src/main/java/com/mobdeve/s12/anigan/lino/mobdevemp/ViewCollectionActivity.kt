@@ -11,7 +11,6 @@ import com.google.firebase.database.ktx.getValue
 import com.mobdeve.s12.anigan.lino.mobdevemp.dao.YourItemAdapter
 import com.mobdeve.s12.anigan.lino.mobdevemp.dao.YourItems
 import com.mobdeve.s12.anigan.lino.mobdevemp.databinding.ActivityViewCollectionBinding
-import com.mobdeve.s12.anigan.lino.mobdevemp.model.Item
 
 class ViewCollectionActivity : AppCompatActivity() {
 
