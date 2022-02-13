@@ -36,7 +36,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:padding="3dp"
-            android:text="EDIT" />
+            android:text="DELETE" />
 
 
     </TableRow>

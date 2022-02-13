@@ -6,13 +6,8 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
-import com.mobdeve.s12.anigan.lino.mobdevemp.dao.OtherUserAdapter
-import com.mobdeve.s12.anigan.lino.mobdevemp.dao.OtherUsers
 import com.mobdeve.s12.anigan.lino.mobdevemp.dao.YourWishlist
 import com.mobdeve.s12.anigan.lino.mobdevemp.dao.YourWishlistAdapter
-import com.mobdeve.s12.anigan.lino.mobdevemp.databinding.ActivityBrowseCollectionBinding
-import com.mobdeve.s12.anigan.lino.mobdevemp.databinding.ActivityAddWishListBinding
-import com.mobdeve.s12.anigan.lino.mobdevemp.databinding.ActivityMainBinding
 import com.mobdeve.s12.anigan.lino.mobdevemp.databinding.ActivityWishlistBinding
 
 class WishlistActivity : AppCompatActivity() {
@@ -21,6 +16,7 @@ class WishlistActivity : AppCompatActivity() {
     private lateinit var databaseReference: DatabaseReference
     private lateinit var userRecyclerView: RecyclerView
     private lateinit var yourWishlistList: ArrayList<YourWishlist>
+    var once = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +28,11 @@ class WishlistActivity : AppCompatActivity() {
         userRecyclerView.setHasFixedSize(true)
 
         yourWishlistList = arrayListOf<YourWishlist>()
+
+
         getUserData()
+
+
 
         var bundle = intent.extras
         var bundleusername = bundle!!.getString("username")
@@ -58,6 +58,7 @@ class WishlistActivity : AppCompatActivity() {
 
     private fun getUserData() {
 
+        yourWishlistList.clear()
         var bundle = intent.extras
         var bundleusername = bundle!!.getString("username")
 
@@ -72,10 +73,13 @@ class WishlistActivity : AppCompatActivity() {
                         if (yourWishlist != null) {
                             if(yourWishlist.itemOwner == bundleusername){
                                 yourWishlistList.add(yourWishlist!!)
+
+                                //yourWishlistList.remove(yourWishlist!!)
                             }
                         }
                     }
-                    userRecyclerView.adapter = YourWishlistAdapter(yourWishlistList)
+                    userRecyclerView.adapter = YourWishlistAdapter(applicationContext,yourWishlistList)
+
                 }
             }
 
@@ -86,5 +90,10 @@ class WishlistActivity : AppCompatActivity() {
         })
 
 
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        recreate()
     }
 }
