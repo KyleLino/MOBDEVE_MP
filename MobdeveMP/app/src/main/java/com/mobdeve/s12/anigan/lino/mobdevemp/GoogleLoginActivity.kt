@@ -12,9 +12,13 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.*
+import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
+import com.mobdeve.s12.anigan.lino.mobdevemp.dao.User
 import com.mobdeve.s12.anigan.lino.mobdevemp.databinding.ActivityGoogleLoginBinding
 import com.mobdeve.s12.anigan.lino.mobdevemp.databinding.ActivityMainBinding
+import com.mobdeve.s12.anigan.lino.mobdevemp.databinding.ActivityRegisterBinding
 
 class GoogleLoginActivity : AppCompatActivity() {
 
@@ -23,6 +27,12 @@ class GoogleLoginActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
     lateinit var binding: ActivityGoogleLoginBinding
+
+    lateinit var databaseReference: DatabaseReference
+    lateinit var database: FirebaseDatabase
+
+    var real = false
+
 
 
 
@@ -95,21 +105,60 @@ class GoogleLoginActivity : AppCompatActivity() {
     }
 
     private fun updateUI(user: FirebaseUser?) {
+
         if (user == null){
             Toast.makeText(this, "null email/user", Toast.LENGTH_SHORT).show()
             return
         }
         Log.i(TAG,"${user.displayName}-${user.uid}")
+
+        database = FirebaseDatabase.getInstance()
+        databaseReference = database.getReference("User")
+
+        //chech if user exist
+        databaseReference.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                var list = ArrayList<User>()
+                for (postsnapshot in dataSnapshot.children){
+                    var value = postsnapshot.getValue<User>()
+                    if (value!!.username == user.displayName){
+                        real = true
+                        Log.i(TAG, "USER EXIST")
+                        break
+                    }
+                    list.add(value!!)
+                }
+                if (real){
+                }else{
+                    databaseReference = FirebaseDatabase.getInstance().getReference("User")
+                    var id = databaseReference.push().key.toString()
+                    val User = user.displayName?.let { user.email?.let { it1 ->
+                        User(it, it1, user.uid, false,false,false,false,false,false,false,false,false,false,false)
+                    } }
+                    databaseReference.child(id).setValue(User).addOnSuccessListener {
+                    }.addOnFailureListener {
+                    }
+                }
+            }
+            override fun onCancelled(error: DatabaseError) {
+                // Failed to read value
+            }
+        })
         startActivity(Intent(this, ProfileActivity::class.java))
         val gotoProfileActivity = Intent(applicationContext, ProfileActivity::class.java)
-
-        
         var bundle = Bundle()
         bundle.putString("username", user.displayName)
-        bundle.putString("name", user.displayName)
+        bundle.putString("name", user.email)
         bundle.putString("password", user.uid)
         gotoProfileActivity.putExtras(bundle)
         startActivity(gotoProfileActivity)
         finish()
+    }
+
+
+    private fun checkifreal(){
+
     }
 }
