@@ -5,14 +5,26 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.getValue
+import com.google.firebase.ktx.Firebase
 import com.mobdeve.s12.anigan.lino.mobdevemp.dao.User
 import com.mobdeve.s12.anigan.lino.mobdevemp.databinding.ActivityMainBinding
+import kotlin.math.sign
 
 class MainActivity : AppCompatActivity() {
 
     var TAG = "MAINACTIVITY"
+    private val rc_google = 1000
+
+    private lateinit var auth: FirebaseAuth
 
     lateinit var databaseReference: DatabaseReference
     lateinit var database: FirebaseDatabase
@@ -29,6 +41,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding!!.root)
 
+        auth = Firebase.auth
+
         //REGISTER
         binding.register.setOnClickListener{
             Log.i(TAG,"pressed register")
@@ -43,13 +57,20 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-
-
         //LOGIN FB
-        binding.loginfacebook.setOnClickListener{
+        binding.logingoogle.setOnClickListener{
             Toast.makeText(this, "DITO", Toast.LENGTH_SHORT).show()
             Log.i(TAG,"pressed login facebook")
+
+            val gotoGoogleLoginActivity = Intent(applicationContext, GoogleLoginActivity::class.java)
+
+            //var bundle = Bundle()
+            //bundle.putString("username", username!!.text.toString())
+            //gotoRegisterActivity.putExtras(bundle)
+
+            startActivity(gotoGoogleLoginActivity)
         }
+
 
         //LOGIN
         binding.loginbutton.setOnClickListener{
@@ -107,10 +128,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onStart() {
-        super.onStart()
-
-    }
 
     private fun login(){
 

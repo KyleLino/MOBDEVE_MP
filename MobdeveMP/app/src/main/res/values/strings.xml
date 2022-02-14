@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Mobdeve MP</string>
+    <string name="default_web_client_id1" translatable="false">168154132078-63v10hn724jbe3ha4jd5m6ikogtf0qpe.apps.googleusercontent.com</string>
 </resources>

@@ -84,11 +84,11 @@
             android:textColor="@android:color/white" />
 
         <Button
-            android:id="@+id/loginfacebook"
+            android:id="@+id/logingoogle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#E66E00"
-            android:text="LOGIN with FACEBOOK"
+            android:text="LOGIN with GOOGLE"
             android:fontFamily="@font/montserrat_bold"
             android:textColor="@android:color/white" />
 

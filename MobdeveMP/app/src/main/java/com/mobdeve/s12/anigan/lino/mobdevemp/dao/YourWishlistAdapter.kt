@@ -58,7 +58,7 @@ class YourWishlistAdapter(private val context: Context, private val yourWishlist
                         if (value!!.itemName == itemname && value!!.itemOwner == itemowner){
                             id = postsnapshot.key.toString()
                             databaseReference.child(id).removeValue()
-                            
+
                             val gotoProfileActivity = Intent(context, ProfileActivity::class.java)
                             gotoProfileActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                             val bundle = Bundle()
