@@ -18,12 +18,12 @@ import com.mobdeve.s12.anigan.lino.mobdevemp.databinding.ActivityMainBinding
 
 class GoogleLoginActivity : AppCompatActivity() {
 
-    var TAG = "MAINACTIVITY"
+    var TAG = "LOGINGOOGLEACTIVITY"
     private val rc_google = 1000
 
     private lateinit var auth: FirebaseAuth
     lateinit var binding: ActivityGoogleLoginBinding
-    
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,7 +36,7 @@ class GoogleLoginActivity : AppCompatActivity() {
         setContentView(binding!!.root)
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id1))
+            .requestIdToken(getString(R.string.default_web_client_id1))//created a string in string.xml because default in valuesxml does not pass
             .requestEmail()
             .build()
 
@@ -99,9 +99,11 @@ class GoogleLoginActivity : AppCompatActivity() {
             Toast.makeText(this, "null email/user", Toast.LENGTH_SHORT).show()
             return
         }
+        Log.i(TAG,"${user.displayName}-${user.uid}")
         startActivity(Intent(this, ProfileActivity::class.java))
         val gotoProfileActivity = Intent(applicationContext, ProfileActivity::class.java)
 
+        
         var bundle = Bundle()
         bundle.putString("username", user.displayName)
         bundle.putString("name", user.displayName)

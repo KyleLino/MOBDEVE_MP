@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
+import com.google.firebase.auth.FirebaseAuth
 import com.mobdeve.s12.anigan.lino.mobdevemp.databinding.ActivityProfileBinding
 
 class ProfileActivity : AppCompatActivity() {
@@ -23,6 +24,7 @@ class ProfileActivity : AppCompatActivity() {
     var profileimage: ImageView? = null
 
     var TAG = "PROFILEACTIVITY"
+    private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -128,8 +130,13 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(gotoEditProfileActivity)
         }
 
+        firebaseAuth = FirebaseAuth.getInstance()
         logout!!.setOnClickListener {
             Log.i(TAG, "pressed log out")
+            val firebaseUser = firebaseAuth.currentUser
+            if(firebaseUser != null){
+                firebaseAuth.signOut()
+            }
             val gotoMainActivity = Intent(applicationContext, MainActivity::class.java)
             startActivity(gotoMainActivity)
         }
