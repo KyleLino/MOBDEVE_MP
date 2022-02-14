@@ -47,7 +47,7 @@ class ViewOtherUserProfileActivity : AppCompatActivity() {
 
     private fun getUserWishlistData() {
         var bundle = intent.extras
-        var bundleusername = bundle!!.getString("username")
+        var bundleotherusername = bundle!!.getString("otherusername")
 
         databaseReference = FirebaseDatabase.getInstance().getReference("UserWishListItem")
         databaseReference.addValueEventListener(object : ValueEventListener {
@@ -56,9 +56,9 @@ class ViewOtherUserProfileActivity : AppCompatActivity() {
                     for (userSnapshot in snapshot.children) {
                         val wishlist = userSnapshot.getValue(UserWishList::class.java)
                         if (wishlist != null) {
-                            //if(wishlist.username != bundleusername){
+                            if(wishlist.itemOwner == bundleotherusername){
                                 userWishlistList.add(wishlist!!)
-                            //}
+                            }
                         }
                     }
                     wishlistRecyclerView.adapter = UserWishlistAdapter(userWishlistList)
@@ -73,7 +73,7 @@ class ViewOtherUserProfileActivity : AppCompatActivity() {
 
     private fun getUserItemData() {
         var bundle = intent.extras
-        var bundleusername = bundle!!.getString("username")
+        var bundleotherusername = bundle!!.getString("otherusername")
 
         databaseReference = FirebaseDatabase.getInstance().getReference("UserItem")
         databaseReference.addValueEventListener(object : ValueEventListener {
@@ -82,7 +82,7 @@ class ViewOtherUserProfileActivity : AppCompatActivity() {
                     for (userSnapshot in snapshot.children) {
                         val user = userSnapshot.getValue(UserItem::class.java)
                         if (user != null) {
-                            if(user.itemOwner != bundleusername){
+                            if(user.itemOwner == bundleotherusername){
                                 userItemList.add(user!!)
                             }
                         }

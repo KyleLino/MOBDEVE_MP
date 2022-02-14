@@ -63,7 +63,7 @@ class BrowseCollectionActivity : AppCompatActivity() {
                             }
                         }
                     }
-                    userRecyclerView.adapter = OtherUserAdapter(otherUserList)
+                    userRecyclerView.adapter = OtherUserAdapter(applicationContext,otherUserList)
                 }
             }
 

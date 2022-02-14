@@ -53,6 +53,7 @@
         <entry key="app/src/main/res/layout/activity_view_item.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/activity_view_other_user_profile.xml" value="0.2171875" />
         <entry key="app/src/main/res/layout/activity_wishlist.xml" value="0.16394927536231885" />
+        <entry key="app/src/main/res/layout/item_row_other_collection.xml" value="0.1743659420289855" />
         <entry key="app/src/main/res/layout/item_row_your_collection.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_row_your_wishlist.xml" value="0.2171875" />
         <entry key="app/src/main/res/layout/itemrowsave.xml" value="0.15070921985815602" />
