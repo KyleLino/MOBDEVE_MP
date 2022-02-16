@@ -1,38 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:backgroundTint="#373737">
 
-    <TableRow
-
-        android:id="@+id/trade_offers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-    <TextView
-        android:id="@+id/text_itemname"
-        android:layout_width="286dp"
+    <LinearLayout
+        android:layout_margin="3dp"
+        android:background="#373737"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
 
-        android:layout_margin="10dp"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="Item Name"
-        android:textSize="22sp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginEnd="30dp">
 
-    <Button
-        android:id="@+id/button_edit"
-        android:backgroundTint="#DBA06B"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+            <TextView
+                android:textColor="#d6d6d6"
+                android:textSize="30dp"
+                android:gravity="center"
+                android:id="@+id/offer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="OFFER"/>
 
-        android:layout_weight="1"
-        android:gravity="center"
-        android:padding="3dp"
-        android:text="Send" />
+            <Button
+                android:backgroundTint="#E66E00"
+                android:id="@+id/accept"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ACCEPT"/>
 
-    </TableRow>
+        </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:textColor="#d6d6d6"
+                android:textSize="30dp"
+                android:gravity="center"
+                android:id="@+id/want"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="OFFER"/>
+            <Button
+                android:backgroundTint="#E66E00"
+                android:id="@+id/decline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DECLINE"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
 </androidx.cardview.widget.CardView>

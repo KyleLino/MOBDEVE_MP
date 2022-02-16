@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ViewCollectionActivity">
+    tools:context=".ViewCollectionActivity"
+    android:background="@drawable/horizontal_dark">
 
     <TextView
         android:id="@+id/profileback"
@@ -48,14 +49,14 @@
         app:layout_constraintVertical_bias="0.95" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/gamesavelist"
+        android:id="@+id/senttradeoffers"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="200dp"
         android:layout_marginBottom="100dp"
         android:padding="5dp"
         android:clipToPadding="false"
-
+        tools:listitem="@layout/item_row_trade_offers"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
