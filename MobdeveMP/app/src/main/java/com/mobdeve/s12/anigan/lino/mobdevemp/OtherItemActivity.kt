@@ -58,13 +58,13 @@ class OtherItemActivity : AppCompatActivity() {
 
                     if (isReal){
                         //databaseReference.child(id).removeValue()
-                        val gotoPickTradeOfferActivity = Intent(applicationContext, PickTradeOfferActivity::class.java)
+                        val gotoPickTradeActivity = Intent(applicationContext, PickTradeActivity::class.java)
                         val sharedPreferences = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
                         val editor = sharedPreferences.edit()
                         editor.apply{
                             putString("otheritemID", otheritemid)
                         }.apply()
-                        startActivity(gotoPickTradeOfferActivity)
+                        startActivity(gotoPickTradeActivity)
                     }
                 }
 
