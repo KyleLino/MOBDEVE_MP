@@ -61,6 +61,7 @@ class OtherItemActivity : AppCompatActivity() {
                         val gotoPickTradeActivity = Intent(applicationContext, PickTradeActivity::class.java)
                         val sharedPreferences = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
                         val editor = sharedPreferences.edit()
+                        //gets ID for request Item
                         editor.apply{
                             putString("otheritemID", otheritemid)
                         }.apply()

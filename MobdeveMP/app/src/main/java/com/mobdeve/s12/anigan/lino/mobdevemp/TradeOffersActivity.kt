@@ -59,7 +59,7 @@ class TradeOffersActivity : AppCompatActivity() {
                     for (userSnapshot in snapshot.children) {
                         val user = userSnapshot.getValue(UserItem::class.java)
                         if (user != null) {
-                            if(user.itemOwner != bundleusername){
+                            if(user.itemOwner == bundleusername){
                                 otherItemList.add(user!!)
                             }
                         }
