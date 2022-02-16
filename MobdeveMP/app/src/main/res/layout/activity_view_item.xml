@@ -7,6 +7,8 @@
     tools:context=".ViewItemActivity"
     android:background="@drawable/slanted_dark">
 
+
+
     <TextView
         android:id="@+id/profileback"
         android:layout_width="wrap_content"
