@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MobdeveMP">
         <activity
+            android:name=".PickTradeOfferActivity"
+            android:exported="false" />
+        <activity
             android:name=".GoogleLoginActivity"
             android:exported="false" />
         <activity

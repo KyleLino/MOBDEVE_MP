@@ -1,5 +1,6 @@
 package com.mobdeve.s12.anigan.lino.mobdevemp
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -20,15 +21,29 @@ class BrowseCollectionActivity : AppCompatActivity() {
     private lateinit var userRecyclerView: RecyclerView
     private lateinit var otherUserList: ArrayList<OtherUsers>
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         binding = ActivityBrowseCollectionBinding.inflate(layoutInflater)
         setContentView(binding!!.root)
 
+
         var bundle = intent.extras
         var bundleusername = bundle!!.getString("username")
 
+        //to get
+        val sharedPreferences = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.apply{
+            putString("loggedinuser", bundleusername)
+        }.apply()
+
+
+        /*
+        val sharedPreferences = getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE)
+        val savedloggedin = sharedPreferences.getString("loggedinuser", null)*/
 
         userRecyclerView = findViewById(R.id.other_items)
         userRecyclerView.layoutManager = LinearLayoutManager(this)

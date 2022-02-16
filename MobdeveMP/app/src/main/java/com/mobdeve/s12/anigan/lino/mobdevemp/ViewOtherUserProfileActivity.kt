@@ -27,7 +27,9 @@ class ViewOtherUserProfileActivity : AppCompatActivity() {
         setContentView(binding!!.root)
 
         var bundle = intent.extras
-        var bundleusername = bundle!!.getString("username")
+        var bundleusername = bundle!!.getString("otherusername")
+
+        binding!!.textView4.text = bundleusername
 
         itemRecyclerView = findViewById(R.id.other_user_items)
         wishlistRecyclerView = findViewById(R.id.other_user_wishlist)
@@ -87,7 +89,7 @@ class ViewOtherUserProfileActivity : AppCompatActivity() {
                             }
                         }
                     }
-                    itemRecyclerView.adapter = UserItemAdapter(userItemList)
+                    itemRecyclerView.adapter = UserItemAdapter(applicationContext,userItemList)
                 }
             }
 
